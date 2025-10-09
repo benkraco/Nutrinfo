@@ -4,13 +4,25 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - NombreProyecto</title>
+    <title>@ViewData["Title"] - Nutrinfo</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="shortcut icon" href="~/img/Logo/Isologo.png" type="image/x-icon">
 </head>
 
 <body>
     <header>
-        NombreProyecto
+        <img src="~/img/Logo/Isologo.png" alt="Logo" class="Logo">
+
+        <nav>
+            <ul>
+                <li>
+                    <a href=""><img src="~/img/Iconos/home.png" alt="Icon Home" class="Iconos">Home</a>
+                </li>
+                <li>
+                    <a href=""><img src="~/img/Iconos/search.png" alt="Icon Search" class="Iconos">Buscar</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <main role="main">
@@ -18,7 +30,6 @@
     </main>
 
     <footer>
-        &copy; @DateTime.Now.Year - NombreProyecto
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

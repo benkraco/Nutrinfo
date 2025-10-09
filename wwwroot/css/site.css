@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Nexa';
+  src: url('~/fonts/Nexa-Heavy.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
   font-size: 14px;
   min-height: 100%;
@@ -9,15 +16,38 @@ html {
   }
 }
 
-body {
-  margin: 10px;
-  padding: 10px;
+* {
+  margin: 0;
+  padding: 0;
 }
 
+header {
+  font-family: 'Nexa';
+  padding: 1%;
+  background-color: #6BCB77;
+}
 
-footer {
-  margin-top: 10px;
-  padding: 10px;
-  background-color: #f8f9fa;
-  border-top: 1px solid #e9ecef;
+header .Logo {
+  width: 5%;
+  height: auto;
+}
+
+header .Iconos{
+  width: 0.9%;
+  height: auto;
+  margin-right: 0.5%;
+}
+
+header nav ul {
+  list-style: none;
+}
+
+header nav ul li a {
+  font-size: x-large;
+  color: #000000;
+  text-decoration: none;
+}
+
+header nav ul li a:hover{
+  text-decoration: underline;
 }
