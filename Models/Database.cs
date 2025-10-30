@@ -4,27 +4,29 @@ using System;
 
 public static class Database
 {
-    public int RegistrarUsuario(string nombre, string apellido, string contrasena, string email)
+    private static string _connectionString = @"Server=localhost;DataBase=Nutrinfo;Integrated Security=True;TrustServerCertificate=True";
+
+    public static int RegistrarUsuario(string nombre, string apellido, string contrasena, string email)
     {
-        bool Existe;
+        int Existe;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            Existe = connection.QuerySingleOrDefault<int>("RegistrarUsuario", new { Nombre = nombre, Apellido = apellido, Contrasena = constrasena, Email = email }, commandType: System.Data.CommandType.StoredProcedure);
+            Existe = connection.QuerySingleOrDefault<int>("RegistrarUsuario", new { Nombre = nombre, Apellido = apellido, Contrasena = contrasena, Email = email }, commandType: System.Data.CommandType.StoredProcedure);
         }
         return Existe;
     }
 
-    public int IniciarSesion(string email, string contrasena)
+    public static int IniciarSesion(string email, string contrasena)
     {
-        bool Existe;
+        int Existe;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            Existe = connection.QuerySingleOrDefault<int>("IniciarSesion", new { Email = email, Contrasena = constrasena }, commandType: System.Data.CommandType.StoredProcedure);
+            Existe = connection.QuerySingleOrDefault<int>("IniciarSesion", new { Email = email, Contrasena = contrasena }, commandType: System.Data.CommandType.StoredProcedure);
         }
         return Existe;
     }
 
-    public int CrearPerfilPersonalizado(int idUsuario, string alergias, string intolerancias, string enfermedades, string cultura, string estiloDeVida, string dieta)
+    public static void CrearPerfilPersonalizado(int idUsuario, string alergias, string intolerancias, string enfermedades, string cultura, string estiloDeVida, string dieta)
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
