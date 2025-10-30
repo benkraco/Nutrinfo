@@ -19,6 +19,16 @@ public class UsuarioController : Controller
         return View();
     }
 
+    private string NombreUsuario()
+    {
+        string userJson = HttpContext.Session.GetString("Usuario");
+        Usuarios user = Objeto.StringToObject<Usuarios>(userJson);
+        if (user!=null)
+            return user.Nombre + " " + user.Apellido;
+        else 
+            return "";
+    }
+
     [HttpPost]
     public IActionResult Registrarse(string nombre, string apellido, string contrasena, string email)
     {

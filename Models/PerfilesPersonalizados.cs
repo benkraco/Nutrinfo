@@ -1,3 +1,5 @@
+namespace Nutrinfo.Models;
+
 public class PerfilesPersonalizados {
     public int Id { get; set; }
     public string Alergias { get; set; }

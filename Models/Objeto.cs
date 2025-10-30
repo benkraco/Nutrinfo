@@ -1,4 +1,8 @@
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Mvc;
+using Nutrinfo.Models;
+
+namespace Nutrinfo.Models;
 
 public static class Objeto {
     public static string ObjectToString<T>(T? obj){
@@ -22,4 +26,5 @@ public static class Objeto {
             return JsonConvert.DeserializeObject<List<T>>(json);
         }
     }
+
 } 

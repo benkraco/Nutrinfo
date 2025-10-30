@@ -2,6 +2,8 @@ using Microsoft.Data.SqlClient;
 using Dapper;
 using System;
 
+namespace Nutrinfo.Models;
+
 public static class Database
 {
     private static string _connectionString = @"Server=localhost;DataBase=Nutrinfo;Integrated Security=True;TrustServerCertificate=True";
