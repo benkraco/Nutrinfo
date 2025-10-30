@@ -79,7 +79,10 @@ public class UsuarioController : Controller
 
     public IActionResult PerfilPersonalizado()
     {
-        ViewBag.error = "";
+        Usuarios usuario = Objeto.StringToObject<Usuarios>(HttpContext.Session.GetString("Usuario"));
+        if (usuario == null) {
+            return RedirectToAction("IniciarSesion", "Usuario");
+        }
         return View();
     }
 

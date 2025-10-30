@@ -57,4 +57,28 @@ public static class Database
             connection.QuerySingleOrDefault<int>("CrearPerfilPersonalizado", new { IDUsuario = idUsuario, Intolerancias = intolerancias, Enfermedades = enfermedades, Cultura = cultura, EstiloDeVida = estiloDeVida, Dieta = dieta }, commandType: System.Data.CommandType.StoredProcedure);
         }
     }
+
+    public static List<Productos> ListarProductos()
+    {
+        List<Productos> listaProductos = new List<Productos>();
+
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            connection.Query<Productos>("SELECT * FROM Productos").ToList();
+        }
+
+        return listaProductos;
+    }
+
+    public static List<Productos> BuscarProductos(string busqueda)
+    {
+        List<Productos> listaProductos = new List<Productos>();
+
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            connection.Query<Productos>("SELECT * FROM Productos WHERE Nombre = @pBusqueda", new { pBusqueda = busqueda }).ToList();
+        }
+
+        return listaProductos;
+    }
 }
