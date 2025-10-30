@@ -22,13 +22,13 @@ public class UsuarioController : Controller
     [HttpPost]
     public IActionResult Registrarse(string nombre, string apellido, string contrasena, string email)
     {
-        Usuarios usuario = new Usuarios();
         string vista;
         int registroValido;
         registroValido = Database.RegistrarUsuario(nombre, apellido, contrasena, email);
 
         if (registroValido == 0)
         {
+            HttpContext.Session.SetString("Usuario", Objeto.ObjectToString(Database.traerUsuarioRegistro(nombre, apellido, contrasena)));
             vista = "PerfilPersonalizado";
         }
         else
@@ -36,8 +36,6 @@ public class UsuarioController : Controller
             ViewBag.error = "Error";
             vista = "Registrarse";
         }
-
-        HttpContext.Session.SetString("Usuario", "nombre" : nombre, "apellido" : apellido, "contrasena" : contrasena, "email" : email);
 
         return View(vista);
     }
@@ -57,6 +55,7 @@ public class UsuarioController : Controller
 
         if (inicioValido == 1)
         {
+            HttpContext.Session.SetString("Usuario", Objeto.ObjectToString(Database.traerUsuarioLogin(email, contrasena)));
             vista = "Home";
         }
         else

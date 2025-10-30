@@ -16,6 +16,28 @@ public static class Database
         return Existe;
     }
 
+    public static Usuarios traerUsuarioRegistro(string nombre, string apellido, string contrasena)
+    {
+        Usuarios usuario = new Usuarios();
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "SELECT * FROM Usuarios WHERE Nombre = @pNombre AND Apellido = @pApellido AND Contrasena = @pContrasena";
+            usuario = connection.QueryFirstOrDefault<Usuarios>(query, new { pNombre = nombre, pApellido = apellido, pContrasena = contrasena });
+        }
+        return usuario;
+    }
+
+    public static Usuarios traerUsuarioLogin(string email, string contrasena)
+    {
+        Usuarios usuario = new Usuarios();
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "SELECT * FROM Usuarios WHERE Email = @pEmail AND Contrasena = @pContrasena";
+            usuario = connection.QueryFirstOrDefault<Usuarios>(query, new { pEmail = email, pContrasena = contrasena });
+        }
+        return usuario;
+    }
+
     public static int IniciarSesion(string email, string contrasena)
     {
         int Existe;
