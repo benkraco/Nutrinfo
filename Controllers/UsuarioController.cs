@@ -22,6 +22,7 @@ public class UsuarioController : Controller
     [HttpPost]
     public IActionResult Registrarse(string nombre, string apellido, string contrasena, string email)
     {
+        Usuarios usuario = new Usuarios();
         string vista;
         int registroValido;
         registroValido = Database.RegistrarUsuario(nombre, apellido, contrasena, email);
@@ -35,6 +36,8 @@ public class UsuarioController : Controller
             ViewBag.error = "Error";
             vista = "Registrarse";
         }
+
+        HttpContext.Session.SetString("Usuario", "nombre" : nombre, "apellido" : apellido, "contrasena" : contrasena, "email" : email);
 
         return View(vista);
     }
