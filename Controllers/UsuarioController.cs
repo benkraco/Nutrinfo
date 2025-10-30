@@ -13,6 +13,12 @@ public class UsuarioController : Controller
         _logger = logger;
     }
 
+    public IActionResult Registrarse()
+    {
+        ViewBag.error = "";
+        return View();
+    }
+
     [HttpPost]
     public IActionResult Registrarse(string nombre, string apellido, string contrasena, string email)
     {
@@ -27,9 +33,48 @@ public class UsuarioController : Controller
         else
         {
             ViewBag.error = "Error";
-            vista = "Registro";
+            vista = "Registrarse";
         }
 
         return View(vista);
+    }
+
+    public IActionResult IniciarSesion()
+    {
+        ViewBag.error = "";
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult IniciarSesion(string email, string contrasena)
+    {
+        string vista;
+        int inicioValido;
+        inicioValido = Database.IniciarSesion(email, contrasena);
+
+        if (inicioValido == 1)
+        {
+            vista = "Home";
+        }
+        else
+        {
+            ViewBag.error = "Error";
+            vista = "IniciarSesion";
+        }
+
+        return View(vista);
+    }
+
+    public IActionResult PerfilPersonalizado()
+    {
+        ViewBag.error = "";
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult PerfilPersonalizado(int idUsuario, string alergias, string intolerancias, string enfermedades, string cultura, string estiloDeVida, string dieta)
+    {
+        Database.CrearPerfilPersonalizado(idUsuario, alergias, intolerancias, enfermedades, cultura, estiloDeVida, dieta);
+        return View("Bienvenida");
     }
 }
