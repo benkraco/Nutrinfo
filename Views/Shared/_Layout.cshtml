@@ -10,27 +10,24 @@
 </head>
 
 <body>
-    <header>
-        <img src="~/img/Logo/Isologo.png" alt="Logo" class="Logo">
+    <header> 
+        <img src="~/img/Logo/Isologo.png" alt="Logo" class="Logo"/>
 
         <nav>
             <ul>
                 <li>
-                    <a href=""><img src="~/img/Iconos/home.png" alt="Icon Home" class="Iconos">Home</a>
+                    <a href="index.html"><img src="~/img/Iconos/home.png" alt="Icon Home" class="Iconos"/>Home</a> <!-- Cambiar HREF -->
                 </li>
                 <li>
-                    <a href=""><img src="~/img/Iconos/search.png" alt="Icon Search" class="Iconos">Buscar</a>
-                </li>
-                <li>
-                    <a href="">Iniciar sesión</a>
-                </li>
-                <li>
-                    <a href="">Registrarse</a>
+                    <a href="registrado.html"><img src="~/img/Iconos/search.png" alt="Icon Search" class="Iconos"/>Buscar</a>  <!-- Cambiar HREF -->
                 </li>
             </ul>
         </nav>
         
-
+        <div class="div-home">
+            <a href="iniciarsesion.html">Iniciar sesión</a> <!-- Cambiar HREF -->
+            <a href="">Registrarse</a>  <!-- Cambiar HREF -->
+        </div>
     </header>
 
     <main role="main">
@@ -38,6 +35,65 @@
     </main>
 
     <footer>
+        <div class="firstFooter">
+            <div>
+                <img src="~/img/Logo/Isologo.png" alt="Logo" class="Logo" />
+            </div>
+            <div>
+                <p class="titles">Contacto</p>
+                <div class="icon-text">
+                    <img src="~/img/Iconos/envelope.png" alt="Icono Mail" class="icons" />
+                    <a href="">info@nutrinfo.app</a>
+                </div>
+                <div class="icon-text">
+                    <img src="~/img/Iconos/phone-call.png" alt="Icono Telefono" class="icons" />
+                    <a href="">+54 9 11 1234-5678</a>
+                </div>
+            </div>
+            <div>
+                <p class="titles">Información</p>
+                <a href="">
+                    <p>Sobre nosotros</p>
+                </a>
+                <a href="">
+                    <p>Preguntas frecuentes</p>
+                </a>
+                <a href="">
+                    <p>Manual de usuario</p>
+                </a>
+                <a href="">
+                    <p>Blog</p>
+                </a>
+            </div>
+            <div>
+                <p class="titles">Redes sociales</p>
+                <div class="icon-text">
+                    <img src="~/img/Iconos/instagram.png" alt="Icono Instagram" class="icons" />
+                    <a href="">Instagram</a>
+                </div>
+                <div class="icon-text">
+                    <img src="~/img/Iconos/twitter-alt.png" alt="Icono X" class="icons" />
+                    <a href="">X (Twitter)</a>
+                </div>
+                <div class="icon-text">
+                    <img src="~/img/Iconos/facebook.png" alt="Icono Facebook" class="icons" />
+                    <a href="">Facebook</a>
+                </div>
+                <div class="icon-text">
+                    <img src="~/img/Iconos/tik-tok.png" alt="Icono TikTok" class="icons" />
+                    <a href="">TikTok</a>
+                </div>
+            </div>
+            <div>
+                <p class="titles">Descargar</p>
+                <img src="~/img/Varias/appsdescargar.png" alt="Imagen App Store Google Play" class="descargas" />
+            </div>
+        </div>
+        <div class="secondFooter">
+            <p>Copyright &copy; @DateTime.Now.Year Nutrinfo</p>
+            <a href="">Términos y condiciones</a> -
+            <a href="">Política de privacidad</a> - <a href="">Cookies</a>
+        </div>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

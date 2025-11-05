@@ -1,6 +1,20 @@
 @font-face {
   font-family: 'Nexa';
-  src: url('~/fonts/Nexa-Heavy.ttf') format('ttf');
+  src: url('/fonts/Nexa-Heavy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Creato Display Medium';
+  src: url('/fonts/CreatoDisplay-Medium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Creato Display Bold';
+  src: url('/fonts/CreatoDisplay-Bold.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -23,31 +37,149 @@ html {
 
 header {
   font-family: 'Nexa';
-  padding: 1%;
   background-color: #6BCB77;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 99%;
+  padding: 0.5%;
+  position: sticky;
+  top: 0;
 }
 
 header .Logo {
-  width: 5%;
+  width: 3%;
   height: auto;
+  margin-left: 5%;
+  margin-right: 2%;
 }
 
-header .Iconos{
-  width: 0.9%;
-  height: auto;
-  margin-right: 0.5%;
+.Iconos {
+  width: 20px;
+  height: 20px;
+  margin-right: 2%;
 }
 
 header nav ul {
   list-style: none;
+  display: flex;
+  margin: 0 !important;
 }
 
-header nav ul li a {
+:last-child nav ul li {
+  margin-right: 10%;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  width: 20%;
+  margin-right: 37.5%;
+}
+
+.div-home {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 7.5%;
+  width: 30%;
+}
+
+header div {
+  margin-right: 5%;
+}
+
+header nav ul li a,
+.div-home a,
+.div-header a {
   font-size: x-large;
   color: #000000;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 
-header nav ul li a:hover{
+
+header nav ul li a:hover,
+.div-home a:hover,
+.div-header a:hover {
   text-decoration: underline;
+}
+
+.div-header {
+  text-align: end;
+  width: 30%;
+  margin-right: 5%;
+}
+
+.firstFooter {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1%;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.firstFooter div {
+  text-align: center;
+}
+
+.firstFooter .Logo {
+  width: 30%;
+  height: auto;
+}
+
+.titles {
+  font-family: 'Nexa';
+  font-size: x-large;
+  text-align: start;
+}
+
+.icon-text {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+.icon-text .icons {
+  width: 5%;
+  height: auto;
+  margin-right: 1%;
+}
+
+.firstFooter a {
+  font-family: 'Creato Display Medium';
+  color: black;
+  text-align: start;
+}
+
+.descargas {
+  width: 45%;
+  height: auto;
+  display: flex;
+  justify-content: start;
+}
+
+.secondFooter {
+  background-color: #1C658C;
+  color: white;
+  text-align: center;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+}
+
+.secondFooter a,
+.secondFooter p {
+  font-family: 'Creato Display Medium';
+  color: white;
+}
+
+.secondFooter p {
+  margin-bottom: 0.25%;
 }
