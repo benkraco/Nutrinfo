@@ -140,13 +140,13 @@ header nav ul li a:hover,
 .div-log .dropdown-toggle:hover,
 .div-log .dropdown-toggle:focus,
 .div-log .dropdown-toggle:active,
-.div-log .show > .dropdown-toggle,
+.div-log .show>.dropdown-toggle,
 .div-log .dropdown-toggle:focus-visible {
-    background-color: transparent !important;
-    text-decoration: underline;
-    color: #000 !important;
-    box-shadow: none !important;
-    outline: none !important;
+  background-color: transparent !important;
+  text-decoration: underline;
+  color: #000 !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 /*Preguntarle a Ceriana como arreglar el tema del hover blanco*/
@@ -176,6 +176,7 @@ header nav ul li a:hover,
   font-family: 'Nexa';
   font-size: x-large;
   text-align: start;
+  margin: 0;
 }
 
 .icon-text {
@@ -195,6 +196,10 @@ header nav ul li a:hover,
   font-family: 'Creato Display Medium';
   color: black;
   text-align: start;
+}
+
+.firstFooter a p {
+  margin: 0;
 }
 
 .descargas {
@@ -220,4 +225,5 @@ header nav ul li a:hover,
 
 .secondFooter p {
   margin-bottom: 0.25%;
+  margin: 0;
 }
