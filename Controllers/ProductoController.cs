@@ -13,15 +13,6 @@ public class ProductoController : Controller
     {
         _logger = logger;
     }
-    private string NombreUsuario()
-    {
-        string userJson = HttpContext.Session.GetString("Usuario");
-        Usuarios user = Objeto.StringToObject<Usuarios>(userJson);
-        if (user != null)
-            return user.Nombre + " " + user.Apellido;
-        else
-            return "";
-    }
 
     public IActionResult Buscador()
     {

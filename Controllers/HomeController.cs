@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 using Nutrinfo.Models;
 
@@ -16,19 +17,16 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-
-        ViewBag.NombreUsuario = NombreUsuario();
+        var data = HttpContext.Session.GetString("Usuario");
+        if (data != null)
+        {
+            var usuario = JsonConvert.DeserializeObject<Usuarios>(data);
+            ViewBag.UsuarioLogeado = usuario;
+        }
+        else
+        {
+            ViewBag.UsuarioLogeado = null;
+        }
         return View();
     }
-    private string NombreUsuario()
-    {
-        string userJson = HttpContext.Session.GetString("Usuario");
-        Usuarios user = Objeto.StringToObject<Usuarios>(userJson);
-        if (user!=null)
-            return user.Nombre + " " + user.Apellido;
-        else 
-            return "";
-    }
-
-    
 }

@@ -1,33 +1,71 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var usuarioLogeado = ViewBag.UsuarioLogeado as Usuarios;
+}
+
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Nutrinfo</title>
+    @if (ViewData["Title"].ToString() == "Inicio")
+    {
+        <title>Nutrinfo</title>
+    }
+    else
+    {
+        <title>@ViewData["Title"] - Nutrinfo</title>
+    }
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="shortcut icon" href="~/img/Logo/Isologo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
-    <header> 
-        <img src="~/img/Logo/Isologo.png" alt="Logo" class="Logo"/>
+    <header>
+        <img src="~/img/Logo/Isologo.png" alt="Logo" class="Logo" />
 
         <nav>
             <ul>
                 <li>
-                    <a href="index.html"><img src="~/img/Iconos/home.png" alt="Icon Home" class="Iconos"/>Home</a> <!-- Cambiar HREF -->
+                    <a href='@Url.Action("Index", "Home")'><img src="~/img/Iconos/home.png" alt="Icon Home" class="Iconos" />Home</a>
+                    <!-- Cambiar HREF -->
                 </li>
                 <li>
-                    <a href="registrado.html"><img src="~/img/Iconos/search.png" alt="Icon Search" class="Iconos"/>Buscar</a>  <!-- Cambiar HREF -->
+                    <a href='@Url.Action("Buscador", "Producto")'><img src="~/img/Iconos/search.png" alt="Icon Search"
+                            class="Iconos" />Buscar</a> <!-- Cambiar HREF -->
                 </li>
             </ul>
         </nav>
-        
-        <div class="div-home">
-            <a href="iniciarsesion.html">Iniciar sesión</a> <!-- Cambiar HREF -->
-            <a href="">Registrarse</a>  <!-- Cambiar HREF -->
-        </div>
+
+        @if (usuarioLogeado == null)
+        {
+            <div class="div-home">
+                <a href='@Url.Action("IniciarSesion", "Usuario")'>Iniciar sesión</a> <!-- Cambiar HREF -->
+                <a href='@Url.Action("Registrarse", "Usuario")'>Registrarse</a> <!-- Cambiar HREF -->
+            </div>
+        }
+        else
+        {
+            <div class="div-log">
+                <img src="~/img/Iconos/usuario.png" alt="Icon User" class="Iconos">
+
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        @usuarioLogeado.Nombre @usuarioLogeado.Apellido
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"> <img src="~/img/Iconos/settings.png" alt="Icon Config"
+                                    class="Iconos">Configuración</a></li>
+                        <li><a class="dropdown-item" href="#"> <img src="~/img/Iconos/power.png" alt="Icon LogOut"
+                                    class="Iconos">Cerrar sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        }
     </header>
 
     <main role="main">
@@ -96,6 +134,9 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)

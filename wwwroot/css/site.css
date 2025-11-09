@@ -41,7 +41,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 99%;
+  width: 100%;
   padding: 0.5%;
   position: sticky;
   top: 0;
@@ -51,13 +51,13 @@ header .Logo {
   width: 3%;
   height: auto;
   margin-left: 5%;
-  margin-right: 2%;
+  margin-right: 1%;
 }
 
 .Iconos {
   width: 20px;
-  height: 20px;
-  margin-right: 2%;
+  height: auto;
+  margin-right: 5px;
 }
 
 header nav ul {
@@ -85,13 +85,19 @@ header nav {
   width: 30%;
 }
 
+.div-log {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 30%;
+}
+
 header div {
   margin-right: 5%;
 }
 
 header nav ul li a,
-.div-home a,
-.div-header a {
+.div-home a {
   font-size: x-large;
   color: #000000;
   text-decoration: none;
@@ -102,16 +108,48 @@ header nav ul li a,
 
 
 header nav ul li a:hover,
-.div-home a:hover,
-.div-header a:hover {
+.div-home a:hover {
   text-decoration: underline;
 }
 
-.div-header {
-  text-align: end;
-  width: 30%;
-  margin-right: 5%;
+.dropdown .dropdown-toggle {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  font-size: x-large;
+  color: #000000;
 }
+
+.dropdown-menu li {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.dropdown-menu li a {
+  color: #000000;
+}
+
+.dropdown-menu li a:hover {
+  text-decoration: underline;
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.div-log .dropdown-toggle:hover,
+.div-log .dropdown-toggle:focus,
+.div-log .dropdown-toggle:active,
+.div-log .show > .dropdown-toggle,
+.div-log .dropdown-toggle:focus-visible {
+    background-color: transparent !important;
+    text-decoration: underline;
+    color: #000 !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/*Preguntarle a Ceriana como arreglar el tema del hover blanco*/
 
 .firstFooter {
   width: 100%;
