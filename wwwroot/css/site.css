@@ -190,12 +190,17 @@ section button:hover{
   align-items: center;
   margin-top: 5%;
   margin-bottom: 5%;
-  gap: 50px;
+  gap: 75px;
+}
+
+.indexIntro img {
+  width: 35%;
+  border-radius: 15px;
 }
 
 .indexIntro div,
 .indexIntro .titles {
-  text-align: end;
+  text-align: start;
 }
 
 .indexSlogan {
@@ -215,12 +220,17 @@ section button:hover{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 50px;
+  gap: 75px;
   margin-bottom: 5%;
 }
 
 .indexPerfilPersonal .titles {
   text-align: start;
+}
+
+.indexPerfilPersonal img {
+  width: 35%;
+  border-radius: 15px;
 }
 
 .indexIntegrantes {
