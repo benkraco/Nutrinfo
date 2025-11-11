@@ -190,7 +190,7 @@ section button:hover{
   align-items: center;
   margin-top: 5%;
   margin-bottom: 5%;
-  gap: 75px;
+  gap: 5%;
 }
 
 .indexIntro img {
@@ -208,7 +208,7 @@ section button:hover{
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
+  gap: 5%;
   margin-bottom: 5%;
 }
 
@@ -220,7 +220,7 @@ section button:hover{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 75px;
+  gap: 5%;
   margin-bottom: 5%;
 }
 
@@ -238,7 +238,7 @@ section button:hover{
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  gap: 2%;
   margin-bottom: 5%;
 }
 
