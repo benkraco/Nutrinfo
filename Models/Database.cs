@@ -76,7 +76,7 @@ public static class Database
 
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            connection.Query<Productos>("SELECT * FROM Productos WHERE Nombre = @pBusqueda", new { pBusqueda = busqueda }).ToList();
+            connection.Query<Productos>("SELECT * FROM Productos WHERE Nombre LIKE @pBusqueda", new { pBusqueda = busqueda }).ToList();
         }
 
         return listaProductos;
