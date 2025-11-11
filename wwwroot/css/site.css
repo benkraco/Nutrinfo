@@ -180,7 +180,7 @@ section button:hover{
 
 .titles {
   font-family: 'Nexa';
-  font-size: x-large;
+  font-size: xx-large;
   text-align: center;
 }
 
@@ -208,7 +208,7 @@ section button:hover{
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(3, 1fr);
-  gap: 35px;
+  gap: 50px;
   margin-bottom: 5%;
 }
 
@@ -251,6 +251,13 @@ section button:hover{
 .indexIntegrantes .names {
   font-family: 'Creato Display Bold';
   font-size: large;
+}
+
+.indexIntegrantes img {
+  width: 50%;
+  height: auto;
+  border-radius: 15px;
+  margin-top: 5%;
 }
 
 .indexCallToAction {
