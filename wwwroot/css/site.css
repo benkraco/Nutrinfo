@@ -165,7 +165,7 @@ section p {
   font-family: 'Creato Display Medium';
 }
 
-section button {
+section button, .botonInput {
   font-family: 'Creato Display Medium';
   border: none;
   background-color: #1c658c;
@@ -265,6 +265,62 @@ section button:hover{
   margin-right: 20%;
   margin-left: 20%;
   margin-bottom: 5%;
+}
+
+.layoutIniciarSesion, .layoutRegistrarse {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+.Registrarse {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.IniciarSesion {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ARegistrar, .AInicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4%;
+    width: 100%;
+}
+.IniciarSesion h1, .Registrarse h1 {
+    margin-bottom: 3%;
+}
+.ARegistrar p, .AInicio p {
+    margin-right: 2% !important;
+    margin: 0%;
+}
+.bloque-inicio, .bloque-registrarse {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 1%;
+    gap: 10px;
+}
+.icon {
+    width: 4.5%;
+    height: auto;
+}
+
+.bloque-sesion, .bloque-registro {
+    margin-bottom: 2%;
+    width: 70%;    
+}
+
+.bloque-inicio p, .bloque-registrarse p {
+    margin: 0 !important;
 }
 
 /* FOOTER */

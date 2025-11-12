@@ -31,11 +31,10 @@
                 <li>
                     <a href='@Url.Action("Index", "Home")'><img src="~/img/Iconos/home.png" alt="Icon Home"
                             class="Iconos" />Home</a>
-                    <!-- Cambiar HREF -->
                 </li>
                 <li>
                     <a href='@Url.Action("Buscador", "Producto")'><img src="~/img/Iconos/search.png" alt="Icon Search"
-                            class="Iconos" />Buscar</a> <!-- Cambiar HREF -->
+                            class="Iconos" />Buscar</a>
                 </li>
             </ul>
         </nav>
@@ -43,8 +42,8 @@
         @if (usuarioLogeado == null)
         {
             <div class="div-home">
-                <a href='@Url.Action("IniciarSesion", "Usuario")'>Iniciar sesión</a> <!-- Cambiar HREF -->
-                <a href='@Url.Action("Registrarse", "Usuario")'>Registrarse</a> <!-- Cambiar HREF -->
+                <a href='@Url.Action("IniciarSesion", "Usuario")'>Iniciar sesión</a>
+                <a href='@Url.Action("Registrarse", "Usuario")'>Registrarse</a>
             </div>
         }
         else

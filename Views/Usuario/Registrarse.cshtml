@@ -2,6 +2,51 @@
     ViewData["Title"] = "Registrarse";
 }
 
-<section>
-    hola este es el registrarse
+<section class="layoutRegistrarse">
+    <div class="circulo">
+        <img src="img/Logo/Logotipo ByN.png" alt="">
+    </div>
+    <div class="Registrarse">
+        <h1>Registrarse</h1>
+        <form action='@Url.Action("Registrarse", "Usuario")' method="post" enctype="multipart/form-data">
+        <div class="bloque-registro">
+            <div class="bloque-registrarse">
+                <img src="~/img/Iconos/usuario.png" alt="Icono Usuario" class="icon">
+                <p>Nombre</p>
+            </div>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="nombre" required>
+        </div>
+        <div class="bloque-registro">
+            <div class="bloque-registrarse">
+                <img src="~/img/Iconos/usuario.png" alt="Icono Usuario" class="icon" >
+                <p>Apellido</p>
+            </div>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="apellido" required>
+        </div>
+        <div class="bloque-registro">
+            <div class="bloque-registrarse">
+                <img src="~/img/Iconos/envelope.png" alt="Icono Usuario" class="icon">
+                <p>Email</p>
+            </div>
+            <input type="email" class="form-control" id="exampleFormControlInput1" name="email" required>
+        </div>
+        <div class="bloque-registro">
+            <div class="bloque-registrarse">
+                <img src="~/img/Iconos/lock.png" alt="Icono Usuario" class="icon" name="contrasena">
+                <p>Contraseña</p>
+            </div>
+            <input type="password" id="inputPassword5" class="form-control"
+                aria-describedby="passwordHelpBlock">
+        </div>
+        <div class="bloque-registrarse">
+            <input type="checkbox" required>
+            <p>He leído y acepto los <a href="">Términos y Condiciones</a></p>
+        </div>
+        <input type="submit" value="Registrarse" class="botonInput">
+        </form>
+        <div class="AInicio">
+            <p>¿Ya tienes una cuenta? </p>
+            <button>Iniciar sesión</button>
+        </div>
+    </div>
 </section>
