@@ -375,6 +375,54 @@ form {
   font-family: 'Creato Display';
 }
 
+/* BUSCADOR */
+.section-buscador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.search-var {
+  align-items: center;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 3%;
+}
+.search-var button {
+  padding: 2% !important;
+}
+.productos {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(5, 1fr);
+  padding-top: 1%;
+  gap: 40px;
+  margin-left: 7%;
+  margin-right: 7%;
+}
+.img-producto {
+  width: 50%;
+  height: auto;
+  margin: 5%;
+}
+.producto {
+  text-align: center;
+  background-color: #1C658C;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.producto:hover {
+  transform: scale(1.05);
+}
+
+.producto p {
+  color: #ffffff;
+}
+
 /* FOOTER */
 
 .firstFooter {

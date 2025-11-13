@@ -64,7 +64,7 @@ public static class Database
 
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            connection.Query<Productos>("SELECT * FROM Productos").ToList();
+            listaProductos = connection.Query<Productos>("SELECT * FROM Productos").ToList();
         }
 
         return listaProductos;
