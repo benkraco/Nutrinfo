@@ -1,5 +1,13 @@
-﻿@{
-    var usuarioLogeado = ViewBag.UsuarioLogeado as Usuarios;
+﻿@using Newtonsoft.Json
+@using Nutrinfo.Models
+@{
+    var data = Context.Session.GetString("Usuario");
+    Usuarios usuarioLogeado = null;
+
+    if (data != null)
+    {
+        usuarioLogeado = Objeto.StringToObject<Usuarios>(data);
+    }
 }
 
 <!DOCTYPE html>
@@ -60,7 +68,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#"> <img src="~/img/Iconos/settings.png" alt="Icon Config"
                                     class="Iconos">Configuración</a></li>
-                        <li><a class="dropdown-item" href="#"> <img src="~/img/Iconos/power.png" alt="Icon LogOut"
+                        <li><a class="dropdown-item" href='@Url.Action("CerrarSesion", "Usuario")'> <img src="~/img/Iconos/power.png" alt="Icon LogOut"
                                     class="Iconos">Cerrar sesión</a></li>
                     </ul>
                 </div>

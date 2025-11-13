@@ -2,6 +2,41 @@
     ViewData["Title"] = "Iniciar sesión";
 }
 
-<section>
-    hola este es el inicio de sesión
+<section class="layoutForm layoutForm-inicio">
+    <div class="form-container">
+        <p class="titles">Iniciar sesión</p>
+
+        <form action='@Url.Action("IniciarSesion", "Usuario")' method="post">
+            <div class="input-bloque">
+                <div class="input-label">
+                    <img src="~/img/Iconos/envelope.png" alt="Icono Email" class="icon" />
+                    <p>Email</p>
+                </div>
+                <input type="email" class="form-control" id="email" name="email" required />
+            </div>
+
+            <div class="input-bloque">
+                <div class="input-label">
+                    <img src="~/img/Iconos/lock.png" alt="Icono Contraseña" class="icon" />
+                    <p>Contraseña</p>
+                </div>
+                <input type="password" class="form-control" id="password" name="contrasena" required />
+            </div>
+
+            <input type="submit" value="Iniciar sesión" class="botonInput" />
+        </form>
+
+        <div class="form-redirect">
+            <p>¿No tenés una cuenta?</p>
+            <a href='@Url.Action("Registrarse", "Usuario")' class="buttons">Registrarse</a>
+        </div>
+    </div>
+
+    <div class="form-circulo">
+        <img src="~/img/Logo/Logotipo ByN.png" alt="Logotipo Nutrinfo" />
+        <p>
+            ¡Qué bueno tenerte de vuelta! Entrá a Nutrinfo y seguí descubriendo qué hay detrás
+            de los alimentos que consumís. Elegí con claridad, elegí con confianza.
+        </p>
+    </div>
 </section>

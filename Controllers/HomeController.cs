@@ -17,16 +17,6 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        var data = HttpContext.Session.GetString("Usuario");
-        if (data != null)
-        {
-            var usuario = JsonConvert.DeserializeObject<Usuarios>(data);
-            ViewBag.UsuarioLogeado = usuario;
-        }
-        else
-        {
-            ViewBag.UsuarioLogeado = null;
-        }
         return View();
     }
 }

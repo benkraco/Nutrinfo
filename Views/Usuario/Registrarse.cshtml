@@ -2,51 +2,59 @@
     ViewData["Title"] = "Registrarse";
 }
 
-<section class="layoutRegistrarse">
-    <div class="circulo">
-        <img src="img/Logo/Logotipo ByN.png" alt="">
+<section class="layoutForm layoutForm-registro">
+    <div class="form-circulo">
+        <img src="~/img/Logo/Logotipo ByN.png" alt="Logotipo Nutrinfo">
+        <p>¡Creá tu cuenta y empezá a entender lo que comés! Con Nutrinfo vas a poder buscar
+            productos, conocer sus ingredientes y tomar decisiones más conscientes sobre tu alimentación.</p>
     </div>
-    <div class="Registrarse">
-        <h1>Registrarse</h1>
+
+    <div class="form-container">
+        <p class="titles">Registrarse</p>
         <form action='@Url.Action("Registrarse", "Usuario")' method="post" enctype="multipart/form-data">
-        <div class="bloque-registro">
-            <div class="bloque-registrarse">
-                <img src="~/img/Iconos/usuario.png" alt="Icono Usuario" class="icon">
-                <p>Nombre</p>
+            <div class="input-bloque">
+                <div class="input-label">
+                    <img src="~/img/Iconos/usuario.png" class="icon" alt="icono usuario" />
+                    <p>Nombre</p>
+                </div>
+                <input type="text" name="nombre" class="form-control" required>
             </div>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="nombre" required>
-        </div>
-        <div class="bloque-registro">
-            <div class="bloque-registrarse">
-                <img src="~/img/Iconos/usuario.png" alt="Icono Usuario" class="icon" >
-                <p>Apellido</p>
+
+            <div class="input-bloque">
+                <div class="input-label">
+                    <img src="~/img/Iconos/usuario.png" class="icon" alt="icono usuario" />
+                    <p>Apellido</p>
+                </div>
+                <input type="text" name="apellido" class="form-control" required>
             </div>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="apellido" required>
-        </div>
-        <div class="bloque-registro">
-            <div class="bloque-registrarse">
-                <img src="~/img/Iconos/envelope.png" alt="Icono Usuario" class="icon">
-                <p>Email</p>
+
+            <div class="input-bloque">
+                <div class="input-label">
+                    <img src="~/img/Iconos/envelope.png" class="icon" alt="icono email" />
+                    <p>Email</p>
+                </div>
+                <input type="email" name="email" class="form-control" required>
             </div>
-            <input type="email" class="form-control" id="exampleFormControlInput1" name="email" required>
-        </div>
-        <div class="bloque-registro">
-            <div class="bloque-registrarse">
-                <img src="~/img/Iconos/lock.png" alt="Icono Usuario" class="icon" name="contrasena">
-                <p>Contraseña</p>
+
+            <div class="input-bloque">
+                <div class="input-label">
+                    <img src="~/img/Iconos/lock.png" class="icon" alt="icono contraseña" />
+                    <p>Contraseña</p>
+                </div>
+                <input type="password" name="contrasena" class="form-control" required>
             </div>
-            <input type="password" id="inputPassword5" class="form-control"
-                aria-describedby="passwordHelpBlock">
-        </div>
-        <div class="bloque-registrarse">
-            <input type="checkbox" required>
-            <p>He leído y acepto los <a href="">Términos y Condiciones</a></p>
-        </div>
-        <input type="submit" value="Registrarse" class="botonInput">
+
+            <div class="input-checkbox">
+                <input type="checkbox" required>
+                <p>He leído y acepto los <a href="">Términos y Condiciones</a></p>
+            </div>
+
+            <input type="submit" value="Registrarse" class="botonInput">
         </form>
-        <div class="AInicio">
-            <p>¿Ya tienes una cuenta? </p>
-            <button>Iniciar sesión</button>
+
+        <div class="form-redirect">
+            <p>¿Ya tenés una cuenta?</p>
+            <a href="" class="buttons">Iniciar sesión</a>
         </div>
     </div>
 </section>

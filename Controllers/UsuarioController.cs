@@ -56,7 +56,7 @@ public class UsuarioController : Controller
         if (inicioValido == 1)
         {
             HttpContext.Session.SetString("Usuario", Objeto.ObjectToString(Database.traerUsuarioLogin(email, contrasena)));
-            vista = "Home";
+            vista = "RegistroExito";
         }
         else
         {
@@ -81,5 +81,11 @@ public class UsuarioController : Controller
     {
         Database.CrearPerfilPersonalizado(idUsuario, alergias, intolerancias, enfermedades, cultura, estiloDeVida, dieta);
         return View("Bienvenida");
+    }
+
+    public IActionResult CerrarSesion()
+    {
+        HttpContext.Session.Clear();
+        return View();
     }
 }
