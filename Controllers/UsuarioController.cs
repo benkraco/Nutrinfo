@@ -13,6 +13,10 @@ public class UsuarioController : Controller
         _logger = logger;
     }
 
+    public IActionResult Exito() {
+        return View();
+    }
+
     public IActionResult Registrarse()
     {
         ViewBag.error = "";
@@ -29,7 +33,7 @@ public class UsuarioController : Controller
         if (registroValido == 0)
         {
             HttpContext.Session.SetString("Usuario", Objeto.ObjectToString(Database.traerUsuarioRegistro(nombre, apellido, contrasena)));
-            vista = "PerfilPersonalizado";
+            vista = "Exito";
         }
         else
         {
@@ -56,7 +60,7 @@ public class UsuarioController : Controller
         if (inicioValido == 1)
         {
             HttpContext.Session.SetString("Usuario", Objeto.ObjectToString(Database.traerUsuarioLogin(email, contrasena)));
-            vista = "RegistroExito";
+            vista = "Exito";
         }
         else
         {

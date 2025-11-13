@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Exito";
+}
+
+<section class="main-registrado">
+    <p class="titles">Bienvenido Hugo</p>
+    <img src="~/img/Varias/Nutri Checkmark.png" alt="nutricheck" class="nutricheck" />
+    <p class="subtitles">Tu cuenta ha sido creada con exito. Ahora podés empezar a explorar productos, conocer sus ingredientes y
+                descubrir qué hay detrás de lo que comés.</p>
+    <div class="botones-registrado">
+        <a href='@Url.Action("Buscador", "Producto")' class="buttons">Empieza a buscar productos</a>
+        <a href='@Url.Action("PerfilPersonalizado", "Usuario")' class="buttons">Crea tu perfil personalizado</a>
+    </div>
+</section>
