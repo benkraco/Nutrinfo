@@ -154,7 +154,10 @@ header nav ul li a:hover,
 
 /*Preguntarle a Ceriana como arreglar el tema del hover blanco*/
 
-.section-buscador, .homeMision, .perfil-personalizado, .landingPage {
+.section-buscador,
+.homeMision,
+.perfil-personalizado,
+.landingPage {
   margin-left: 6%;
   margin-right: 6%;
 }
@@ -287,6 +290,12 @@ section .buttons:hover,
   padding-bottom: 5%;
 }
 
+.layoutIniciarSesion form {
+  background-color: #f0f0f0;
+  padding: 5%;
+  border-radius: 15px;
+}
+
 .IniciarSesion {
   width: 35%;
   display: flex;
@@ -295,26 +304,29 @@ section .buttons:hover,
   justify-content: center;
   text-align: center;
 }
+
 .bloque-sesion {
-  width: 80%;
-  margin-top: 4%;
   margin-bottom: 4%;
 }
+
 .bloque-inicio {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 4%;
+  gap: 3%;
   width: 100%;
-  margin-bottom: 2%;
 }
+
 .bloque-inicio img {
   width: 5%;
   height: auto;
 }
+
 .bloque-inicio p {
   font-family: 'Creato Display Medium';
+  margin-top: 3%;
 }
+
 .circulo-inicio {
   width: 45%;
   display: flex;
@@ -323,21 +335,25 @@ section .buttons:hover,
   justify-content: center;
   margin-left: 5%;
 }
+
 .circulo-inicio img {
   width: 60%;
   height: auto;
   margin-bottom: 5%;
 }
+
 .circulo-inicio p {
   width: 70%;
   font-family: 'Creato Display Medium';
   text-align: justify;
   font-size: large;
 }
+
 .ARegistrar p {
   margin-right: 2% !important;
   margin: 0%;
 }
+
 .ARegistrar {
   display: flex;
   justify-content: center;
@@ -345,11 +361,19 @@ section .buttons:hover,
   margin-top: 4%;
   width: 100%;
 }
+
 .boton-inicio {
   align-items: center;
   padding: 1.5% 31% !important
 }
 
+.error {
+  background-color: pink;
+  color: #E70023;
+  padding: 1.5%;
+  border-radius: 10px;
+  border: 1px solid #E70023;
+}
 
 /* BUSCADOR */
 .section-buscador {
@@ -360,6 +384,7 @@ section .buttons:hover,
   margin-top: 5%;
   margin-bottom: 5%;
 }
+
 .search-var {
   align-items: center;
   width: 30%;
@@ -368,9 +393,11 @@ section .buttons:hover,
   gap: 15px;
   margin-bottom: 2%;
 }
+
 .search-var button {
   padding: 2% !important;
 }
+
 .productos {
   display: grid;
   grid-template-rows: 1fr;
@@ -379,11 +406,13 @@ section .buttons:hover,
   margin-left: 7%;
   margin-right: 7%;
 }
+
 .img-producto {
   width: 70%;
   height: auto;
   margin: 5%;
 }
+
 .producto {
   text-align: center;
   background-color: #1C658C;
@@ -411,20 +440,24 @@ section .buttons:hover,
   margin-top: 5%;
   margin-bottom: 5%;
 }
+
 .main-registrado img {
-  width: 15%;
+  width: 10%;
   height: auto;
 }
+
 .botones-registrado {
   width: 40%;
   display: flex;
   gap: 30px;
-  justify-content: center ;
+  justify-content: center;
+  margin-top: 2%;
 }
 
 .main-registrado p {
   width: 40%;
   text-align: center;
+  margin: 0;
 }
 
 

@@ -2,9 +2,16 @@
     ViewData["Title"] = "Exito";
 }
 
+@using Newtonsoft.Json
+@using Nutrinfo.Models
+@{
+    Usuarios usuarioLogeado = Objeto.StringToObject<Usuarios>(Context.Session.GetString("Usuario"));
+}
+
+
 <section class="main-registrado">
-    <p class="titles">Bienvenido Hugo</p>
-    <img src="~/img/Varias/Nutri Checkmark.png" alt="nutricheck" class="nutricheck" />
+    <p class="titles">Bienvenido/a @usuarioLogeado.Nombre</p>
+    <img src="~/img/Varias/Nutri Checkmark.png" alt="nutricheck" class="<img src="" alt="Imagen Nutri Checkmark">
     <p class="subtitles">Tu cuenta ha sido creada con exito. Ahora podés empezar a explorar productos, conocer sus ingredientes y
                 descubrir qué hay detrás de lo que comés.</p>
     <div class="botones-registrado">

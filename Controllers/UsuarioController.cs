@@ -13,7 +13,13 @@ public class UsuarioController : Controller
         _logger = logger;
     }
 
-    public IActionResult Exito() {
+    public IActionResult Exito()
+    {
+        Usuarios usuario = Objeto.StringToObject<Usuarios>(HttpContext.Session.GetString("Usuario"));
+        if (usuario == null)
+        {
+            return RedirectToAction("IniciarSesion", "Usuario");
+        }
         return View();
     }
 
@@ -64,7 +70,7 @@ public class UsuarioController : Controller
         }
         else
         {
-            ViewBag.error = "Error";
+            ViewBag.error = "ERROR - Email o contraseña incorrectos";
             vista = "IniciarSesion";
         }
 
@@ -74,7 +80,8 @@ public class UsuarioController : Controller
     public IActionResult PerfilPersonalizado()
     {
         Usuarios usuario = Objeto.StringToObject<Usuarios>(HttpContext.Session.GetString("Usuario"));
-        if (usuario == null) {
+        if (usuario == null)
+        {
             return RedirectToAction("IniciarSesion", "Usuario");
         }
         return View();

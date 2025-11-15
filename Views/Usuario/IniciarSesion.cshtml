@@ -5,7 +5,11 @@
 <section class="layoutIniciarSesion">
     <div class="IniciarSesion">
         <p class="titles">Iniciar sesión</p>
-
+        @if (@ViewBag.error != "") {
+            <p class="error">@ViewBag.error</p>
+        } else {
+            <p></p>
+        }
         <form action='@Url.Action("IniciarSesion", "Usuario")' method="post">
             <div class="bloque-sesion">
                 <div class="bloque-inicio">

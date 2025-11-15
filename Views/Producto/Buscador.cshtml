@@ -4,20 +4,20 @@
 
 <section class="section-buscador">
     <div class="search-var">
-        <img src="~/img/Iconos/search.png" alt="Icono Search" class="icon">
-        <input type="text" class="form-control" id="search">
-        <button class="botonInput">Buscar</button>
+        <img src="~/img/Iconos/search.png" alt="Icono Search" class="Iconos">
+        <input type="text" class="form-control" id="search" name="busqueda">
+        <input type="submit" class="botonInput" value="Buscar"></input>
     </div>
-        <p class="titles">Productos más buscados</p>
-        <div class="productos">
-    @foreach (Productos producto in ViewBag.ListarProductos)
-    {
-        <div class="producto">
-            <img src="@producto.ImagenProducto" alt="img-producto" class="img-producto" />
-            <p class="subtitles">@producto.Nombre @producto.Cantidad</p>
-        </div>
-    }
+    <p class="titles">Productos más buscados</p>
+    <div class="productos">
+        @foreach (Productos producto in ViewBag.ListarProductos)
+        {
+            <div class="producto">
+                <img src="@producto.ImagenProducto" alt="img-producto" class="img-producto" />
+                <p class="subtitles">@producto.Nombre @producto.Cantidad</p>
+            </div>
+        }
     </div>
 </section>
 
-    
+<!-- <form action='@Url.Action("Buscador", "Producto")' method="post"> </form> -->
