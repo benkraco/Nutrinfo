@@ -500,7 +500,37 @@ section .buttons:hover,
   margin: 0;
 }
 
+/* PERFIL PERSONALIZADO */
 
+.perfilPersonalizado {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.layoutPerfilPerso {
+  display: flex;
+  justify-content: center;
+}
+
+.perfilPersonalizado form {
+  background-color: #f0f0f0;
+  width: 45%;
+  padding: 2%;
+  border-radius: 15px;
+}
+
+.perfilPregunta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.perfilBotones {
+  margin-top: 3%;
+}
+
+.perfilBotones a:first-child{
+  background-color: #298ec4;
+}
 /* FOOTER */
 
 .firstFooter {
