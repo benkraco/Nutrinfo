@@ -34,12 +34,12 @@ html {
   margin: 0;
   padding: 0;
   color: #000000;
+  font-family: 'Creato Display Medium';
 }
 
 /* HEADER */
 
 header {
-  font-family: 'Nexa';
   background-color: #6BCB77;
   display: flex;
   justify-content: space-between;
@@ -101,6 +101,7 @@ header div {
 
 header nav ul li a,
 .div-home a {
+  font-family: 'Nexa';
   font-size: x-large;
   color: #000000;
   text-decoration: none;
@@ -121,6 +122,7 @@ header nav ul li a:hover,
   padding: 0 !important;
   font-size: x-large;
   color: #000000;
+  font-family: 'Nexa';
 }
 
 .dropdown-menu li {
@@ -147,7 +149,7 @@ header nav ul li a:hover,
 .div-log .dropdown-toggle:focus-visible {
   background-color: transparent !important;
   text-decoration: underline;
-  color: #000 !important;
+  color: #000000 !important;
   box-shadow: none !important;
   outline: none !important;
 }
@@ -290,13 +292,33 @@ section .buttons:hover,
   padding-bottom: 5%;
 }
 
-.layoutIniciarSesion form {
+.layoutRegistrarse {
+  background-image: url("../img/Varias/Circulo.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 50%;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.layoutIniciarSesion form,
+.layoutRegistrarse form {
   background-color: #f0f0f0;
   padding: 5%;
   border-radius: 15px;
 }
 
-.IniciarSesion {
+.layoutIniciarSesion form .botonInput {
+  margin-top: 4%;
+}
+
+.IniciarSesion,
+.Registrarse {
   width: 35%;
   display: flex;
   flex-direction: column;
@@ -305,24 +327,23 @@ section .buttons:hover,
   text-align: center;
 }
 
-.bloque-sesion {
-  margin-bottom: 4%;
-}
-
-.bloque-inicio {
+.bloque-inicio,
+.bloque-registro {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 3%;
+  gap: 2%;
   width: 100%;
 }
 
-.bloque-inicio img {
-  width: 5%;
+.bloque-inicio img,
+.bloque-registro img {
+  width: 4%;
   height: auto;
 }
 
-.bloque-inicio p {
+.bloque-inicio p,
+.bloque-registro p {
   font-family: 'Creato Display Medium';
   margin-top: 3%;
 }
@@ -336,25 +357,38 @@ section .buttons:hover,
   margin-left: 5%;
 }
 
-.circulo-inicio img {
+.circulo-registrarse {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-right: 5%;
+}
+
+.circulo-inicio img,
+.circulo-registrarse img {
   width: 60%;
   height: auto;
   margin-bottom: 5%;
 }
 
-.circulo-inicio p {
+.circulo-inicio p,
+.circulo-registrarse p {
   width: 70%;
   font-family: 'Creato Display Medium';
   text-align: justify;
   font-size: large;
 }
 
-.ARegistrar p {
+.ARegistrar p,
+.AInicio p {
   margin-right: 2% !important;
   margin: 0%;
 }
 
-.ARegistrar {
+.ARegistrar,
+.AInicio {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -362,9 +396,15 @@ section .buttons:hover,
   width: 100%;
 }
 
-.boton-inicio {
+.bloqueCheckmark {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 1.5% 31% !important
+  gap: 3%;
+}
+
+.bloqueCheckmark p {
+  margin-top: 3%;
 }
 
 .error {
