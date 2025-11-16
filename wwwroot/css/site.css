@@ -524,13 +524,28 @@ section .buttons:hover,
   justify-content: space-between;
 }
 
+.perfilPregunta p {
+  font-family: 'Creato Display Bold';
+  font-size: large;
+}
+
+.perfilPregunta p:last-child {
+  margin-left: 5%;
+}
+
 .perfilBotones {
   margin-top: 3%;
 }
 
-.perfilBotones a:first-child{
+.perfilBotones button:first-child {
   background-color: #298ec4;
 }
+
+
+.perfilBotones button:last-child {
+  background-color: #1C658C;
+}
+
 /* FOOTER */
 
 .firstFooter {

@@ -1,4 +1,24 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿const pasos = document.querySelectorAll(".pasosPerfil");
+let pasoRecorrido = 0;
 
-// Write your JavaScript code.
+function mostrarPaso(i) {
+    pasos.forEach((s, idx) => {
+        s.style.display = idx === i ? "block" : "none";
+    });
+}
+
+mostrarPaso(pasoRecorrido);
+
+document.querySelectorAll(".continuar").forEach(boton => {
+    boton.addEventListener("click", () => {
+        pasoRecorrido++;
+        mostrarPaso(pasoRecorrido);
+    });
+});
+
+document.querySelectorAll(".atras").forEach(boton => {
+    boton.addEventListener("click", () => {
+        pasoRecorrido--;
+        mostrarPaso(pasoRecorrido);
+    });
+});
