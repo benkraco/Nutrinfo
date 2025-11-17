@@ -507,12 +507,12 @@ section .buttons:hover,
   margin-bottom: 5%;
 }
 
-.layoutPerfilPerso {
+.centrarForm {
   display: flex;
   justify-content: center;
 }
 
-.perfilPersonalizado form {
+.layoutPerfilPerso {
   background-color: #f0f0f0;
   width: 45%;
   padding: 2%;

@@ -13,7 +13,27 @@ public class UsuarioController : Controller
         _logger = logger;
     }
 
-    public IActionResult Exito()
+    public IActionResult ExitoIniciarSesion()
+    {
+        Usuarios usuario = Objeto.StringToObject<Usuarios>(HttpContext.Session.GetString("Usuario"));
+        if (usuario == null)
+        {
+            return RedirectToAction("IniciarSesion", "Usuario");
+        }
+        return View();
+    }
+
+    public IActionResult ExitoRegistrarse()
+    {
+        Usuarios usuario = Objeto.StringToObject<Usuarios>(HttpContext.Session.GetString("Usuario"));
+        if (usuario == null)
+        {
+            return RedirectToAction("IniciarSesion", "Usuario");
+        }
+        return View();
+    }
+
+    public IActionResult ExitoPerfilPersonalizado()
     {
         Usuarios usuario = Objeto.StringToObject<Usuarios>(HttpContext.Session.GetString("Usuario"));
         if (usuario == null)
@@ -38,12 +58,13 @@ public class UsuarioController : Controller
 
         if (registroValido == 0)
         {
+            // Arreglar el Store Procedure que estan los 3 AND y se rompe todo
             HttpContext.Session.SetString("Usuario", Objeto.ObjectToString(Database.traerUsuarioRegistro(nombre, apellido, contrasena)));
-            vista = "Exito";
+            vista = "ExitoRegistrarse";
         }
         else
         {
-            ViewBag.error = "Error";
+            ViewBag.error = "ERROR - Este mail ya se ha usado";
             vista = "Registrarse";
         }
 
@@ -66,7 +87,7 @@ public class UsuarioController : Controller
         if (inicioValido == 1)
         {
             HttpContext.Session.SetString("Usuario", Objeto.ObjectToString(Database.traerUsuarioLogin(email, contrasena)));
-            vista = "Exito";
+            vista = "ExitoIniciarSesion";
         }
         else
         {
@@ -88,10 +109,11 @@ public class UsuarioController : Controller
     }
 
     [HttpPost]
-    public IActionResult PerfilPersonalizado(int idUsuario, string alergias, string intolerancias, string enfermedades, string cultura, string estiloDeVida, string dieta)
+    public IActionResult PerfilPersonalizado(string alergias, string intolerancias, string enfermedades, string cultura, string estiloDeVida, string dieta)
     {
+        int idUsuario = 3; // Hacer un  buscar usuario en un Store Procedure o Query
         Database.CrearPerfilPersonalizado(idUsuario, alergias, intolerancias, enfermedades, cultura, estiloDeVida, dieta);
-        return View("Bienvenida");
+        return View("ExitoPerfilPersonalizado");
     }
 
     public IActionResult CerrarSesion()

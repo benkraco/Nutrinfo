@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Exito";
+}
+
+@using Newtonsoft.Json
+@using Nutrinfo.Models
+@{
+    Usuarios usuarioLogeado = Objeto.StringToObject<Usuarios>(Context.Session.GetString("Usuario"));
+}
+
+
+<section class="main-registrado">
+    <p class="titles">¡Bienvenido/a de nuevo @usuarioLogeado.Nombre!</p>
+    <img src="~/img/Varias/Nutri Hey.png" alt="Imagen Nutri Hey" class="<img src="" alt=" Imagen Nutri Checkmark">
+    <p class="subtitles">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quasi veritatis dolor nihil velit
+        itaque adipisci totam alias, maiores natus, eum nobis eius sit cupiditate ducimus, debitis vero voluptatibus
+        nostrum.</p>
+    <div class="botones-registrado">
+        <a href='@Url.Action("Buscador", "Producto")' class="buttons">Empieza a buscar productos</a>
+    </div>
+</section>

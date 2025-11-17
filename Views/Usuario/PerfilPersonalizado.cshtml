@@ -5,9 +5,10 @@
 <section class="perfilPersonalizado">
     <p class="titles">Perfil personalizado</p>
 
-    <div class="layoutPerfilPerso">
-        <form>
-            <div class="pasosPerfil">
+    <div class="centrarForm">
+        <div class="layoutPerfilPerso">
+            <div class="pasosPerfil" name="alergias">
+                <p class="error" style="display: none"></p>
                 <div class="perfilPregunta">
                     <p>¿Sufres algunas de estas alergias alimentarias comunes?</p>
                     <p>1/6</p>
@@ -26,13 +27,13 @@
                     <input type="checkbox" value="Trigo"> Trigo <br>
                     <input type="checkbox" value="Ninguno"> Ninguna de las anteriores <br>
                 </div>
-
                 <div class="perfilBotones">
                     <button type="button" class="continuar buttons">Continuar</button>
                 </div>
             </div>
 
-            <div class="pasosPerfil">
+            <div class="pasosPerfil" name="intolerancias">
+                <p class="error" style="display: none"></p>
                 <div class="perfilPregunta">
                     <p>¿Sufres algunas de estas intolerancias y sensibilidades comunes?</p>
                     <p>2/6</p>
@@ -48,16 +49,16 @@
                     <input type="checkbox" value="Cafeina"> Cafeína <br>
                     <input type="checkbox" value="Ninguno"> Ninguna de las anteriores <br>
                 </div>
-
                 <div class="perfilBotones">
                     <button type="button" class="atras buttons">Atras</button>
                     <button type="button" class="continuar buttons">Continuar</button>
                 </div>
             </div>
 
-            <div class="pasosPerfil">
+            <div class="pasosPerfil" name="enfermedades">
+                <p class="error" style="display: none"></p>
                 <div class="perfilPregunta">
-                    <p>¿Sufres algunas de estas enfermedades o condiciones médicas con restricciones?</p>
+                    <p>¿Sufres algunas de estas enfermedades o condiciones médicas con restricciones cotidianas?</p>
                     <p>3/6</p>
                 </div>
                 <div class="perfilCheckmarks">
@@ -82,12 +83,86 @@
                     ulcerosa (dietas específicas según tolerancia) <br>
                     <input type="checkbox" value="Ninguno"> Ninguna de las anteriores <br>
                 </div>
-
                 <div class="perfilBotones">
                     <button type="button" class="atras buttons">Atras</button>
                     <button type="button" class="continuar buttons">Continuar</button>
                 </div>
             </div>
-        </form>
+
+            <div class="pasosPerfil" name="cultura">
+                <p class="error" style="display: none"></p>
+                <div class="perfilPregunta">
+                    <p>¿Sigues algunas de estas preferencias culturales y religiosas comunes?</p>
+                    <p>4/6</p>
+                </div>
+                <div class="perfilCheckmarks">
+                    <input type="checkbox" value="Kosher (judio)"> Kosher (judío) <br>
+                    <input type="checkbox" value="Halal (islamico)"> Halal (islámico) <br>
+                    <input type="checkbox" value="Ayuno religioso / rituales especificos (ej: Cuaresma, Ramadan)"> Ayuno
+                    religioso / rituales específicos (ej. Cuaresma, Ramadán) <br>
+                    <input type="checkbox" value="Ninguno"> Ninguna de las anteriores <br>
+                </div>
+                <div class="perfilBotones">
+                    <button type="button" class="atras buttons">Atras</button>
+                    <button type="button" class="continuar buttons">Continuar</button>
+                </div>
+            </div>
+
+            <div class="pasosPerfil" name="estiloDeVida">
+                <p class="error" style="display: none"></p>
+                <div class="perfilPregunta">
+                    <p>¿Sigues algunas de estas opciones de estilo de vida / éticas comunes?</p>
+                    <p>5/6</p>
+                </div>
+                <div class="perfilCheckmarks">
+                    <input type="checkbox" value="Vegetariano"> Vegetariano <br>
+                    <input type="checkbox" value="Ovo-vegetariano"> Ovo-vegetariano <br>
+                    <input type="checkbox" value="Lacto-vegetariano"> Lacto-vegetariano <br>
+                    <input type="checkbox" value="Ovo-lacto-vegetariano"> Ovo-lacto-vegetariano <br>
+                    <input type="checkbox" value="Vegano"> Vegano <br>
+                    <input type="checkbox" value="Pescetariano"> Pescetariano <br>
+                    <input type="checkbox" value="Crudivegano"> Crudivegano <br>
+                    <input type="checkbox" value="Flexitariano"> Flexitariano <br>
+                    <input type="checkbox" value="Ninguno"> Ninguna de las anteriores <br>
+                </div>
+                <div class="perfilBotones">
+                    <button type="button" class="atras buttons">Atras</button>
+                    <button type="button" class="continuar buttons">Continuar</button>
+                </div>
+            </div>
+
+            <div class="pasosPerfil" name="dieta">
+                <p class="error" style="display: none"></p>
+                <div class="perfilPregunta">
+                    <p>¿Sufres algunas de estas restricciones personales o de dieta específica cotidianas?</p>
+                    <p>6/6</p>
+                </div>
+                <div class="perfilCheckmarks">
+                    <input type="checkbox" value="Dieta cetogenica (keto)"> Dieta cetogénica (keto) <br>
+                    <input type="checkbox" value="Dieta baja en carbohidratos (low carb)"> Dieta baja en carbohidratos
+                    (low carb) <br>
+                    <input type="checkbox" value="Dieta baja en grasas (low fat)"> Dieta baja en grasas (low fat) <br>
+                    <input type="checkbox" value="Dieta DASH (hipertension)"> Dieta DASH (hipertensión) <br>
+                    <input type="checkbox" value="Dieta FODMAP (colon irritable, intolerancias intestinales)"> Dieta
+                    FODMAP (colon irritable, intolerancias intestinales) <br>
+                    <input type="checkbox" value="Paleo"> Paleo <br>
+                    <input type="checkbox" value="Macrobiotica"> Macrobiótica <br>
+                    <input type="checkbox" value="Ninguno"> Ninguna de las anteriores <br>
+                </div>
+                <div class="perfilBotones">
+                    <button type="button" class="atras buttons">Atras</button>
+                    <button type="button" class="continuar buttons" onclick="enviarFormulario()">Guardar perfil</button>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
+
+<form method="post" id="formPerfil" action="/Usuario/PerfilPersonalizado">
+    <input type="hidden" id="alergiasInput" name="alergias">
+    <input type="hidden" id="intoleranciasInput" name="intolerancias">
+    <input type="hidden" id="enfermedadesInput" name="enfermedades">
+    <input type="hidden" id="culturaInput" name="cultura">
+    <input type="hidden" id="estiloDeVidaInput" name="estiloDeVida">
+    <input type="hidden" id="dietaInput" name="dieta">
+</form>
