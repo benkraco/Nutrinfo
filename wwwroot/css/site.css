@@ -427,11 +427,18 @@ section .buttons:hover,
 
 .search-var {
   align-items: center;
-  width: 30%;
+  width: 50%;
   display: flex;
   justify-content: center;
   gap: 15px;
   margin-bottom: 2%;
+}
+
+.search-var form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
 }
 
 .search-var button {

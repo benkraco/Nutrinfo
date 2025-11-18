@@ -4,9 +4,11 @@
 
 <section class="section-buscador">
     <div class="search-var">
-        <img src="~/img/Iconos/search.png" alt="Icono Search" class="Iconos">
-        <input type="text" class="form-control" id="search" name="busqueda">
-        <input type="submit" class="botonInput" value="Buscar"></input>
+        <form action='@Url.Action("Buscador", "Producto")' method="post">
+            <img src="~/img/Iconos/search.png" alt="Icono Search" class="Iconos">
+            <input type="text" class="form-control" id="search" name="busqueda">
+            <input type="submit" class="botonInput" value="Buscar"></input>
+        </form>
     </div>
     <p class="titles">Productos más buscados</p>
     <div class="productos">
@@ -19,5 +21,3 @@
         }
     </div>
 </section>
-
-<!-- <form action='@Url.Action("Buscador", "Producto")' method="post"> </form> -->
