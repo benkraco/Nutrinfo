@@ -58,7 +58,6 @@ public class UsuarioController : Controller
 
         if (registroValido == 0)
         {
-            // Arreglar el Store Procedure que estan los 3 AND y se rompe todo
             HttpContext.Session.SetString("Usuario", Objeto.ObjectToString(Database.traerUsuarioRegistro(nombre, apellido, contrasena)));
             vista = "ExitoRegistrarse";
         }
@@ -111,8 +110,8 @@ public class UsuarioController : Controller
     [HttpPost]
     public IActionResult PerfilPersonalizado(string alergias, string intolerancias, string enfermedades, string cultura, string estiloDeVida, string dieta)
     {
-        int idUsuario = 3; // Hacer un  buscar usuario en un Store Procedure o Query
-        Database.CrearPerfilPersonalizado(idUsuario, alergias, intolerancias, enfermedades, cultura, estiloDeVida, dieta);
+        Usuarios usuario = Objeto.StringToObject<Usuarios>(HttpContext.Session.GetString("Usuario"));
+        Database.CrearPerfilPersonalizado(usuario.Id, alergias, intolerancias, enfermedades, cultura, estiloDeVida, dieta);
         return View("ExitoPerfilPersonalizado");
     }
 

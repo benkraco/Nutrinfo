@@ -1,6 +1,7 @@
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
 using Microsoft.SemanticKernel.Connectors.Google;
+
 namespace Nutrinfo.Models
 {
     public class GeminiModel
@@ -13,7 +14,7 @@ namespace Nutrinfo.Models
 
             builder.AddGoogleAIGeminiChatCompletion(
                 modelId: "gemini-2.5-flash",
-                apiKey: "AIzaSyAAeKCkRolm4R7NtSV--FgvlIhTUSHen3U" // si querés lo pasás por ctor
+                apiKey: "AIzaSyAAeKCkRolm4R7NtSV--FgvlIhTUSHen3U"
             );
 
             _kernel = builder.Build();

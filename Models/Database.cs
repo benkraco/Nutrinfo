@@ -81,15 +81,4 @@ public static class Database
 
         return listaProductos;
     }
-
-    public static int BuscarId(string email)
-    {
-        int id;
-
-        using (SqlConnection connection = new SqlConnection(_connectionString))
-        {
-            id = connection.QueryFirstOrDefault<int>("SELECT ID FROM Usuarios WHERE Email = @pEmail", new { pEmail = email });
-        }
-        return id;
-    }
 }
