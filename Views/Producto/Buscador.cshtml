@@ -7,7 +7,7 @@
         <form action='@Url.Action("Buscador", "Producto")' method="post">
             <img src="~/img/Iconos/search.png" alt="Icono Search" class="Iconos">
             <input type="text" class="form-control" id="search" name="busqueda">
-            <input type="submit" class="botonInput" value="Buscar"></input>
+            <input type="submit" class="botonInput" value="Buscar">
         </form>
     </div>
     <p class="titles">Productos más buscados</p>
@@ -16,7 +16,9 @@
         {
             <div class="producto">
                 <img src="@producto.ImagenProducto" alt="img-producto" class="img-producto" />
-                <p class="subtitles">@producto.Nombre @producto.Cantidad</p>
+                <form method="post" id="formProducto" action="/Producto/InformacionProducto">
+                    <a class="subtitles">@producto.Nombre @producto.Cantidad</a>
+                </form>
             </div>
         }
     </div>

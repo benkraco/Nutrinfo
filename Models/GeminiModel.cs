@@ -25,8 +25,8 @@ namespace Nutrinfo.Models
             var chat = _kernel.GetRequiredService<IChatCompletionService>();
 
             var history = new ChatHistory();
-            history.AddSystemMessage("Vas a generar un breve texto de entre 300 y 400 caractéres en el cual según las siguientes características las cuales te voy a poner en una lista, vas a decidir que tan bueno es un producto alimenticio para la persona con dichas características. Las características van a estar listadas pero en caso de que una, varias o todas no digan nada vas a ignorarla y generar el texto como que en cada característica que falta, el usuario es una persona común y sana.");
-            history.AddUserMessage("Características: Alergias: " + perfilPersonalizado.Alergias + ". Intolerancias: " + perfilPersonalizado.Intolerancias + ". Enfermedades: " + perfilPersonalizado.Enfermedades + ". Cultura: " + perfilPersonalizado.Cultura + ". Estilo de Vida: " + perfilPersonalizado.EstiloDeVida + ". Dieta: " + perfilPersonalizado.Dieta);
+            history.AddSystemMessage("Vas a generar un breve texto de entre 300 y 400 caractéres en el cual según las siguientes características las cuales te voy a poner en una lista, vas a decidir que tan bueno es un producto alimenticio para la persona con dichas características. Las características van a estar listadas, puede ser que el usuario no tenga problemas en cada una y en ese caso vas a asumir que es una persona sana.");
+            history.AddUserMessage("Características: Alergias: " + perfilPersonalizado.Alergias + ". Intolerancias: " + perfilPersonalizado.Intolerancias + ". Enfermedades: " + perfilPersonalizado.Enfermedades + ". Cultura: " + perfilPersonalizado.Cultura + ". Estilo de Vida: " + perfilPersonalizado.EstiloDeVida + ". Dieta: " + perfilPersonalizado.Dieta + ". Producto: " + producto.Tipo + " " + producto.Nombre + " " + producto.Cantidad);
 
             var settings = new GeminiPromptExecutionSettings
             {

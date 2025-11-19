@@ -30,4 +30,13 @@ public class ProductoController : Controller
     public IActionResult InformacionProducto() {
         return View();
     }
+
+    public async Task<IActionResult> Preguntar(PerfilesPersonalizados perfilPersonalizado, Productos producto)
+    {
+        var gemini = new GeminiModel();
+        var respuesta = await gemini.PreguntarAsync(perfilPersonalizado, producto);
+
+        ViewBag.Respuesta = respuesta;
+        return View();
+    }
 }

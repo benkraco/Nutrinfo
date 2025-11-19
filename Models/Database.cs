@@ -54,7 +54,7 @@ public static class Database
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            connection.QuerySingleOrDefault<int>("CrearPerfilPersonalizado", new { IDUsuario = idUsuario, Intolerancias = intolerancias, Enfermedades = enfermedades, Cultura = cultura, EstiloDeVida = estiloDeVida, Dieta = dieta }, commandType: System.Data.CommandType.StoredProcedure);
+            connection.QuerySingleOrDefault<int>("CrearPerfilPersonalizado", new { Alergias = alergias, IDUsuario = idUsuario, Intolerancias = intolerancias, Enfermedades = enfermedades, Cultura = cultura, EstiloDeVida = estiloDeVida, Dieta = dieta }, commandType: System.Data.CommandType.StoredProcedure);
         }
     }
 
