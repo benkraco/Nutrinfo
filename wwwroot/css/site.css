@@ -215,8 +215,13 @@ section .buttons:hover,
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(3, 1fr);
-  gap: 5%;
+  gap: 7.5%;
   margin-bottom: 5%;
+}
+
+.indexSlogan img {
+  width: 40%;
+  height: auto;
 }
 
 .indexSlogan div {
