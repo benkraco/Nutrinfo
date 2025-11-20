@@ -16,6 +16,7 @@ public class ProductoController : Controller
 
     public IActionResult Buscador()
     {
+        ViewBag.busqueda = "";
         ViewBag.ListarProductos = Database.ListarProductos();
         return View();
     }
@@ -23,11 +24,13 @@ public class ProductoController : Controller
     [HttpPost]
     public IActionResult Buscador(string busqueda)
     {
+        ViewBag.busqueda = busqueda;
         ViewBag.ListarProductos = Database.BuscarProductos(busqueda);
         return View();
     }
 
-    public IActionResult InformacionProducto() {
+    public IActionResult InformacionProducto(int id) {
+        ViewBag.Producto = Database.BuscarProductoConID(id);
         return View();
     }
 

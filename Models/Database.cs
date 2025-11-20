@@ -81,4 +81,14 @@ public static class Database
 
         return listaProductos;
     }
+
+    public static Productos BuscarProductoConID(int id)
+    {
+        Productos producto = new Productos();
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            producto = connection.QueryFirstOrDefault<Productos>("SELECT * FROM Productos WHERE ID = @pId", new { pId = id });
+        }
+        return producto;
+    }
 }

@@ -10,15 +10,22 @@
             <input type="submit" class="botonInput" value="Buscar">
         </form>
     </div>
-    <p class="titles">Productos más buscados</p>
+    @if (ViewBag.busqueda == "")
+    {
+        <p class="titles">Productos más buscados</p>
+    }
+    else
+    {
+        <p class="titles">Resultados de "@ViewBag.busqueda"</p>
+    }
     <div class="productos">
         @foreach (Productos producto in ViewBag.ListarProductos)
         {
             <div class="producto">
-                <img src="@producto.ImagenProducto" alt="img-producto" class="img-producto" />
-                <form method="post" id="formProducto" action="/Producto/InformacionProducto">
-                    <a class="subtitles">@producto.Nombre @producto.Cantidad</a>
-                </form>
+                <a href="/Producto/InformacionProducto/@producto.Id">
+                    <img src="@producto.ImagenProducto" alt="img-producto" class="img-producto" />
+                    <p>@producto.Nombre @producto.Cantidad</p>
+                </a>
             </div>
         }
     </div>
