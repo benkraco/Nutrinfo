@@ -74,6 +74,64 @@
                 </div>
             </div>
         }
+
+        <div class="menuBurger">
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"><img src="~/img/Iconos/menu-burger.png" alt=""></button>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                    <p class="offcanvas-title titles" id="offcanvasRightLabel">Nutrinfo</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><img
+                            src="~/img/Iconos/cross.png" alt="X" /></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="topOffCanvas">
+                        <div class="iconText">
+                            <a href='@Url.Action("Index", "Home")'>
+                                <img src="~/img/Iconos/home.png" alt="Icono Home">
+                                <p class="titles">Home</p>
+                            </a>
+                        </div>
+                        <div class="iconText">
+                            <a href='@Url.Action("Buscador", "Producto")'>
+                                <img src="~/img/Iconos/search.png" alt="Icono Buscar">
+                                <p class="titles">Buscar</p>
+                            </a>
+                        </div>
+                    </div>
+                    @if (usuarioLogeado == null)
+                    {
+                        <div class="bottomOffcanvas">
+                            <a href='@Url.Action("IniciarSesion", "Usuario")'>
+                                <p class="titles">Iniciar sesión</p>
+                            </a>
+                            <a href='@Url.Action("Registrarse", "Usuario")'>
+                                <p class="titles">Registrarse</p>
+                            </a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="bottomOffCanvas">
+                            <div class="iconText">
+                                <a href="#">
+                                    <img src="~/img/Iconos/settings.png" alt="Icono Buscar">
+                                    <p class="titles">Configuración</p>
+                                </a>
+                            </div>
+                            <div class="iconText">
+                                <a href='@Url.Action("CerrarSesion", "Usuario")'>
+                                    <img src="~/img/Iconos/power.png" alt="Icono Buscar">
+                                    <p class="titles">Cerrar Sesión</p>
+                                </a>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
     </header>
 
     <main role="main">

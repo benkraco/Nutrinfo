@@ -154,6 +154,10 @@ header nav ul li a:hover,
   outline: none !important;
 }
 
+.menuBurger {
+  display: none;
+}
+
 .section-buscador,
 .homeMision,
 .perfil-personalizado,
@@ -742,6 +746,110 @@ section .buttons:hover,
 }
 
 @media (max-width: 600px) {
+  header .Logo {
+    width: 10%;
+    height: auto;
+  }
+
+  header {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 100%;
+  }
+
+  .menuBurger {
+    display: block;
+    text-align: end;
+  }
+
+  .menuBurger button {
+    width: 10%;
+    height: auto;
+    padding: 0;
+    background: none;
+    border: none;
+  }
+
+  .menuBurger button img {
+    width: 100%;
+    height: auto;
+  }
+
+  .offcanvas {
+    margin: 0;
+  }
+
+  .offcanvas .btn-close img {
+    width: 50%;
+    height: auto;
+  }
+
+
+  .offcanvas-body {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+
+  /* Contenedor de los botones superiores */
+  .topOffCanvas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Contenedor de los botones inferiores */
+  .bottomOffcanvas,
+  .bottomOffCanvas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Icono + texto juntos */
+  .topOffCanvas .iconText a,
+  .bottomOffcanvas a,
+  .bottomOffCanvas a {
+    display: flex;
+    align-items: center;
+    gap: 3%;
+    text-decoration: none;
+  }
+
+  /* Tamaño de iconos */
+  .topOffCanvas img,
+  .bottomOffcanvas img,
+  .bottomOffCanvas img {
+    width: 28px;
+    height: auto;
+  }
+
+  /* Texto */
+  .topOffCanvas p,
+  .bottomOffcanvas p,
+  .bottomOffCanvas p {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 600;
+    color: black;
+  }
+
+  /* Hover */
+  .topOffCanvas a:hover p,
+  .bottomOffcanvas a:hover p,
+  .bottomOffCanvas a:hover p {
+    text-decoration: underline;
+  }
+
+  header nav,
+  header .div-home,
+  header .div-log {
+    display: none;
+  }
+
   .layoutIniciarSesion {
     background-image: none !important;
     background-repeat: no-repeat;
@@ -847,61 +955,16 @@ section .buttons:hover,
   }
 
   .main-registrado {
-    width: 96%;
-    max-width: 1240px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 6%;
-    margin-bottom: 6%;
-    padding: 2.5rem 1.5rem;
-    background: transparent;
-    box-sizing: border-box;
-  }
-
-  .main-registrado .titles {
-    font-size: x-large;
+    text-align: center;
   }
 
   .main-registrado img {
-    width: 20%;
+    width: 30%;
     height: auto;
-    margin-bottom: 1rem;
-    max-height: 360px;
+    margin-top: 1%;
+    margin-bottom: 1%;
   }
 
-  .main-registrado p {
-    width: 88%;
-    text-align: center;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-  }
-
-  .botones-registrado {
-    width: 76%;
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0.6rem;
-  }
-
-  .botones-registrado button {
-    flex: 1;
-    min-width: 240px;
-    max-width: 380px;
-    padding: 1.15rem 1.15rem;
-    font-size: 1rem;
-  }
-
-  /* Only affect the main landing page content */
-
-
-  /* INDEX INTRO: make title above image and button below using grid
-       Use display:contents on the inner wrapper so its children become
-       grid items for ordering purposes */
   .indexIntro {
     display: grid;
     grid-template-rows: auto auto auto;
@@ -937,6 +1000,11 @@ section .buttons:hover,
   }
 
   /* INDEX SLOGAN: make each card show title above image */
+  .indexSlogan {
+    display: flex;
+    flex-direction: column;
+  }
+
   .indexSlogan div {
     display: grid;
     grid-template-rows: auto auto;
@@ -954,13 +1022,10 @@ section .buttons:hover,
 
   .indexSlogan div img {
     grid-row: 2;
-    width: 70%;
+    width: 35%;
     max-width: 240px;
   }
 
-  .indexSlogan p {
-    display: none;
-  }
 
   .indexSlogan .titles {
     display: block;
@@ -1151,40 +1216,31 @@ section .buttons:hover,
   .firstFooter {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-top: 5%;
-    padding-bottom: 5%;
   }
 
-  /* LOGO */
   .firstFooter .Logo {
-    width: 15%;
-    margin-bottom: 3%;
+    width: 20%;
+    height: auto;
   }
 
-  /* TITULOS */
-  .footerTitles {
+  .firstFooter div {
     text-align: center;
-    font-size: x-large;
-    /* equivalente a ~1.4rem */
     margin-bottom: 2%;
   }
 
-  /* ICONOS */
-  .icon-text .icons {
-    width: 25px;
-    margin-right: 1%;
-  }
-
-  /* ENLACES DE INFORMACIÓN */
-  .firstFooter a p {
+  .firstFooter div p {
     text-align: center;
   }
 
-  /* DESCARGAS */
-  .descargas {
-    width: 40%;
-    align-items: center !important;
+  .firstFooter .icon-text {
+    display: flex;
+    justify-content: center;
+  }
+
+  .firstFooter .descargas {
+    display: block;
+    margin: 0 auto;
+    width: 35%;
   }
 
   .secondFooter {
