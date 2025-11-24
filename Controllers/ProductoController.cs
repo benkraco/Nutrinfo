@@ -31,16 +31,18 @@ public class ProductoController : Controller
 
     public IActionResult InformacionProducto(int id) {
         ViewBag.Producto = Database.BuscarProductoConID(id);
+        Productos producto = Database.BuscarProductoConID(id);
         ViewBag.Ingredientes = Database.BuscarIngredientesConIDProducto(id);
-        return View();
+        return View(producto);
     }
 
-    public async Task<IActionResult> Preguntar(PerfilesPersonalizados perfilPersonalizado, Productos producto)
+    public async Task<IActionResult> Preguntar(Productos producto)
     {
+        Usuarios usuario = Objeto.StringToObject<Usuarios>(HttpContext.Session.GetString("Usuario"));
+        PerfilesPersonalizados perfilPersonalizado = Database.BuscarPerfilConID(usuario.Id);
         var gemini = new GeminiModel();
-        var respuesta = await gemini.PreguntarAsync(perfilPersonalizado, producto);
+        string respuesta = await gemini.PreguntarAsync(perfilPersonalizado, producto);
 
-        ViewBag.Respuesta = respuesta;
-        return View();
+        return Json(new { respuesta });
     }
 }

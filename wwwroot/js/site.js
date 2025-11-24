@@ -71,3 +71,22 @@ function enviarFormulario() {
 
     document.getElementById("formPerfil").submit();
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const info = document.getElementById("producto-info");
+    if (!info) return;
+
+    const idProducto = info.dataset.id;
+
+    fetch(`/Producto/Preguntar?Id=${idProducto}`, {
+        method: "GET"
+    })
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById("texto-ia").innerText = data.respuesta;
+        })
+        .catch(() => {
+            document.getElementById("texto-ia").innerText =
+                "Hubo un problema generando la recomendación personalizada.";
+        });
+});

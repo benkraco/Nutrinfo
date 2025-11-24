@@ -101,4 +101,14 @@ public static class Database
         }
         return ingredientes;
     }
+
+    public static PerfilesPersonalizados BuscarPerfilConID(int id)
+    {
+        PerfilesPersonalizados perfilPersonalizado = new PerfilesPersonalizados();
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            perfilPersonalizado = connection.QueryFirstOrDefault<PerfilesPersonalizados>("SELECT * FROM PerfilesPersonalizados WHERE ID IN (SELECT IDPerfilPersonalizado FROM Usuarios WHERE ID = @pId)", new { pId = id });
+        }
+        return perfilPersonalizado;
+    }
 }

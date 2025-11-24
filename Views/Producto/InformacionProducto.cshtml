@@ -1,6 +1,7 @@
 @{
     Productos producto = ViewBag.Producto;
     List<Ingredientes> ingredientes = ViewBag.Ingredientes;
+    Usuarios usuarioLogeado = Objeto.StringToObject<Usuarios>(Context.Session.GetString("Usuario"));
     ViewData["Title"] = producto.Nombre + " " + producto.Cantidad;
 }
 
@@ -9,7 +10,8 @@
         <img src="@producto.ImagenProducto" alt="Imagen @producto.Nombre @producto.Cantidad" class="img-producto" />
         <div class="info-producto">
             <p class="titles">@producto.Tipo @producto.Nombre @producto.Cantidad</p>
-            <p><b><u>Descripción:</u></b> Bebida gaseosa de color oscuro, sabor dulce y refrescante con envase de plástico transparente. </p>
+            <p><b><u>Descripción:</u></b> Bebida gaseosa de color oscuro, sabor dulce y refrescante con envase de
+                plástico transparente. </p>
             <p><b><u>Tipo:</u></b> @producto.Tipo</p>
             <p><b><u>Marca:</u></b> The Coca-Cola Company</p>
             <p><b><u>Cantidad:</u></b> @producto.Cantidad</p>
@@ -23,30 +25,45 @@
         <div class="ingredientes">
             <p class="titles">Ingredientes del producto</p>
             <ol>
-                <li><b><u>Agua carbonatada:</u></b> Es agua con gas, que le da a la bebida su textura burbujeante y un sabor más
+                <li><b><u>Agua carbonatada:</u></b> Es agua con gas, que le da a la bebida su textura burbujeante y un
+                    sabor más
                     refrescante.</li>
-                <li><b><u>Azúcar:</u></b> Le da el sabor dulce. Aporta energía, pero no se recomienda consumir en exceso.</li>
-                <li><b><u>Colorante caramelo IV (E-150d):</u></b> Se usa para darle el color oscuro típico. Está permitido en
+                <li><b><u>Azúcar:</u></b> Le da el sabor dulce. Aporta energía, pero no se recomienda consumir en
+                    exceso.</li>
+                <li><b><u>Colorante caramelo IV (E-150d):</u></b> Se usa para darle el color oscuro típico. Está
+                    permitido en
                     alimentos, aunque no tiene valor nutricional.</li>
-                <li><b><u>Ácido fosfórico (acidulante):</u></b> Aporta un toque ácido al sabor. No es recomendable en exceso.</li>
-                <li><b><u>Saborizantes naturales:</u></b> Son mezclas de aromas que le dan el sabor característico a la Coca-Cola. No
+                <li><b><u>Ácido fosfórico (acidulante):</u></b> Aporta un toque ácido al sabor. No es recomendable en
+                    exceso.</li>
+                <li><b><u>Saborizantes naturales:</u></b> Son mezclas de aromas que le dan el sabor característico a la
+                    Coca-Cola. No
                     aportan nutrientes.</li>
-                <li><b><u>Cafeína:</u></b> Aporta un leve efecto estimulante y forma parte del sabor característico de la bebida.</li>
+                <li><b><u>Cafeína:</u></b> Aporta un leve efecto estimulante y forma parte del sabor característico de
+                    la bebida.</li>
             </ol>
         </div>
         <img src="@producto.ImagenInformacion" alt="Imagen Parte Atras @producto.Nombre @producto.Cantidad"
             class="img-nutricional" />
     </div>
-    <div class="parte3-info">
-        <p class="titles">En base a tu perfil</p>
-        <div class="info-ia">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sequi dolore
-                beatae debitis rem enim, natus voluptatem autem? Eos minus esse hic saepe dignissimos ullam aut vero
-                laboriosam repellendus consequuntur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-                pariatur assumenda eaque eius excepturi voluptates inventore adipisci, dolore distinctio, perferendis
-                aut ipsa commodi atque molestiae laboriosam! Totam est ex nihil. Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Iste, repudiandae, maxime, est vitae illum consequuntur fugit laborum dignissimos eos
-                odit assumenda eum enim quibusdam? Veniam, unde dignissimos. Nulla, doloribus rem.</p>
+    @if (usuarioLogeado != null)
+    {
+        <div class="parte3-info" id="producto-info" data-id="@Model.Id">
+            <p class="titles">En base a tu perfil</p>
+            <div class="info-ia">
+                <p id="texto-ia">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                Generando tu respuesta...
+                </p>
+            </div>
         </div>
-    </div>
+    }
+    else
+    {
+        <div class="parte3-info">
+            <p class="titles">En base a tu perfil</p>
+        </div>
+    }
+
 </section>
