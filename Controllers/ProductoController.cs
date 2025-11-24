@@ -31,6 +31,7 @@ public class ProductoController : Controller
 
     public IActionResult InformacionProducto(int id) {
         ViewBag.Producto = Database.BuscarProductoConID(id);
+        ViewBag.Ingredientes = Database.BuscarIngredientesConIDProducto(id);
         return View();
     }
 

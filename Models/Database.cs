@@ -91,4 +91,14 @@ public static class Database
         }
         return producto;
     }
+
+    public static List<Ingredientes> BuscarIngredientesConIDProducto(int id)
+    {
+        List<Ingredientes> ingredientes = new List<Ingredientes>();
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            ingredientes = connection.Query<Ingredientes>("SELECT * FROM Ingredientes WHERE ID IN (SELECT IDIngrediente FROM IngredienteXProducto WHERE IDProducto = @pId)", new { pId = id }).ToList();
+        }
+        return ingredientes;
+    }
 }
