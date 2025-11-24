@@ -665,7 +665,6 @@ section .buttons:hover,
   margin-bottom: 1%;
 }
 
-
 /* FOOTER */
 
 .firstFooter {
@@ -746,8 +745,10 @@ section .buttons:hover,
 }
 
 @media (max-width: 600px) {
+  /* HEADER */
+
   header .Logo {
-    width: 10%;
+    width: 11%;
     height: auto;
   }
 
@@ -794,14 +795,12 @@ section .buttons:hover,
     padding-bottom: 5%;
   }
 
-  /* Contenedor de los botones superiores */
   .topOffCanvas {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
 
-  /* Contenedor de los botones inferiores */
   .bottomOffcanvas,
   .bottomOffCanvas {
     display: flex;
@@ -809,7 +808,6 @@ section .buttons:hover,
     gap: 10px;
   }
 
-  /* Icono + texto juntos */
   .topOffCanvas .iconText a,
   .bottomOffcanvas a,
   .bottomOffCanvas a {
@@ -819,7 +817,6 @@ section .buttons:hover,
     text-decoration: none;
   }
 
-  /* Tamaño de iconos */
   .topOffCanvas img,
   .bottomOffcanvas img,
   .bottomOffCanvas img {
@@ -827,7 +824,6 @@ section .buttons:hover,
     height: auto;
   }
 
-  /* Texto */
   .topOffCanvas p,
   .bottomOffcanvas p,
   .bottomOffCanvas p {
@@ -837,7 +833,6 @@ section .buttons:hover,
     color: black;
   }
 
-  /* Hover */
   .topOffCanvas a:hover p,
   .bottomOffcanvas a:hover p,
   .bottomOffCanvas a:hover p {
@@ -849,6 +844,8 @@ section .buttons:hover,
   header .div-log {
     display: none;
   }
+
+  /* INICIAR SESION */
 
   .layoutIniciarSesion {
     background-image: none !important;
@@ -911,6 +908,8 @@ section .buttons:hover,
     font-size: 1.05rem;
   }
 
+  /* REGISTRARSE */
+
   .layoutRegistrarse {
     background-image: none !important;
     background-repeat: no-repeat;
@@ -954,16 +953,30 @@ section .buttons:hover,
     font-family: 'Creato Display' !important;
   }
 
+  /* EXITO */
+
   .main-registrado {
     text-align: center;
   }
 
   .main-registrado img {
-    width: 30%;
+    width: 35%;
     height: auto;
     margin-top: 1%;
     margin-bottom: 1%;
   }
+
+  .botones-registrado {
+    width: 80%;
+  }
+
+  .main-registrado p {
+    width: 80%;
+    text-align: center;
+    margin: 0;
+  }
+
+  /* INDEX */
 
   .indexIntro {
     display: grid;
@@ -999,7 +1012,6 @@ section .buttons:hover,
     display: inline-block;
   }
 
-  /* INDEX SLOGAN: make each card show title above image */
   .indexSlogan {
     display: flex;
     flex-direction: column;
@@ -1031,7 +1043,6 @@ section .buttons:hover,
     display: block;
   }
 
-  /* PERFIL PERSONAL: title above image, button below */
   .indexPerfilPersonal {
     display: grid;
     grid-template-rows: auto auto auto;
@@ -1104,15 +1115,11 @@ section .buttons:hover,
     border-radius: 16px;
   }
 
+  /* INFORMACION PRODUCTO */
+
   .img-producto {
     width: 75% !important;
     margin: 0 auto;
-  }
-
-  .titulos {
-    font-size: 1.6rem;
-    margin-top: 0.8rem;
-    margin-bottom: 0.6rem;
   }
 
   .main-informacion {
@@ -1120,7 +1127,6 @@ section .buttons:hover,
     display: block;
     box-sizing: border-box;
   }
-
 
   .parte1-info,
   .parte2-info,
@@ -1134,18 +1140,15 @@ section .buttons:hover,
     margin: 1rem 0;
   }
 
-
   .parte1-info {
     justify-content: flex-start;
     text-align: start;
   }
 
-
   .info-producto {
     width: 100%;
     padding: 0.25rem 0.5rem;
   }
-
 
   .main-informacion .img-producto {
     width: 40%;
@@ -1153,7 +1156,6 @@ section .buttons:hover,
     margin: 0.5rem auto;
     display: block;
   }
-
 
   .porcentaje {
     width: 100%;
@@ -1165,7 +1167,6 @@ section .buttons:hover,
     padding: 0 0.5rem;
   }
 
-
   .porcentaje img.barra {
     width: 60%;
     max-width: 260px;
@@ -1173,20 +1174,18 @@ section .buttons:hover,
     display: block;
   }
 
-
   .parte2-info {
     align-items: center;
     gap: 0.5rem;
   }
-
 
   .img-nutricional {
     width: 50%;
     max-width: 220px;
     margin: 0.5rem auto;
     display: block;
+    padding: 2.5%;
   }
-
 
   .ingredientes {
     max-width: 100%;
@@ -1194,16 +1193,14 @@ section .buttons:hover,
     box-sizing: border-box;
   }
 
-
   .info-ia {
     padding: 1rem;
     border-radius: 16px;
     width: 100%;
   }
 
-
   .main-informacion .titles {
-    font-size: 1.15rem;
+    font-size: x-large;
     text-align: center;
   }
 
@@ -1211,7 +1208,7 @@ section .buttons:hover,
     width: 75%;
   }
 
-  /* FOOTER MOBILE */
+  /* FOOTER */
 
   .firstFooter {
     display: flex;
@@ -1235,6 +1232,13 @@ section .buttons:hover,
   .firstFooter .icon-text {
     display: flex;
     justify-content: center;
+    align-items: center;
+  }
+
+  .firstFooter .icon-text img {
+    width: 5%;
+    height: auto;
+    margin-right: 1%;
   }
 
   .firstFooter .descargas {
