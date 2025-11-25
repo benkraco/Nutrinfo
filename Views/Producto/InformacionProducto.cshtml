@@ -25,21 +25,10 @@
         <div class="ingredientes">
             <p class="titles">Ingredientes del producto</p>
             <ol>
-                <li><b><u>Agua carbonatada:</u></b> Es agua con gas, que le da a la bebida su textura burbujeante y un
-                    sabor más
-                    refrescante.</li>
-                <li><b><u>Azúcar:</u></b> Le da el sabor dulce. Aporta energía, pero no se recomienda consumir en
-                    exceso.</li>
-                <li><b><u>Colorante caramelo IV (E-150d):</u></b> Se usa para darle el color oscuro típico. Está
-                    permitido en
-                    alimentos, aunque no tiene valor nutricional.</li>
-                <li><b><u>Ácido fosfórico (acidulante):</u></b> Aporta un toque ácido al sabor. No es recomendable en
-                    exceso.</li>
-                <li><b><u>Saborizantes naturales:</u></b> Son mezclas de aromas que le dan el sabor característico a la
-                    Coca-Cola. No
-                    aportan nutrientes.</li>
-                <li><b><u>Cafeína:</u></b> Aporta un leve efecto estimulante y forma parte del sabor característico de
-                    la bebida.</li>
+                @foreach (Ingredientes ingrediente in ingredientes)
+                {
+                <li><b><u>@ingrediente.Nombre:</u></b> @ingrediente.Descripcion</li>
+                }
             </ol>
         </div>
         <img src="@producto.ImagenInformacion" alt="Imagen Parte Atras @producto.Nombre @producto.Cantidad"

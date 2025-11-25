@@ -24,9 +24,19 @@ namespace Nutrinfo.Models
         {
             var chat = _kernel.GetRequiredService<IChatCompletionService>();
 
+            List<Ingredientes> listaIngredientes = Database.BuscarIngredientesConIDProducto(producto.Id);
+            string ingredientes = "";
+            for (int i = 0; i < listaIngredientes.Count; i++){
+                if (i != 0){
+                    ingredientes += ", ";
+                }
+
+                ingredientes += listaIngredientes[i].Nombre;
+            }
+
             var history = new ChatHistory();
             history.AddSystemMessage("Vas a generar un breve texto de entre 300 y 400 caractéres en el cual según las siguientes características las cuales te voy a poner en una lista, vas a decidir que tan bueno es un producto alimenticio para la persona con dichas características. Las características van a estar listadas, puede ser que el usuario no tenga problemas en cada una y en ese caso vas a asumir que es una persona sana.");
-            history.AddUserMessage("Características: Alergias: " + perfilPersonalizado.Alergias + ". Intolerancias: " + perfilPersonalizado.Intolerancias + ". Enfermedades: " + perfilPersonalizado.Enfermedades + ". Cultura: " + perfilPersonalizado.Cultura + ". Estilo de Vida: " + perfilPersonalizado.EstiloDeVida + ". Dieta: " + perfilPersonalizado.Dieta + ". Producto: " + producto.Tipo + " " + producto.Nombre + " " + producto.Cantidad);
+            history.AddUserMessage("Características: Alergias: " + perfilPersonalizado.Alergias + ". Intolerancias: " + perfilPersonalizado.Intolerancias + ". Enfermedades: " + perfilPersonalizado.Enfermedades + ". Cultura: " + perfilPersonalizado.Cultura + ". Estilo de Vida: " + perfilPersonalizado.EstiloDeVida + ". Dieta: " + perfilPersonalizado.Dieta + ". Producto: " + producto.Tipo + " " + producto.Nombre + " " + producto.Cantidad + ". Ingredientes: " + ingredientes);
 
             var settings = new GeminiPromptExecutionSettings
             {
