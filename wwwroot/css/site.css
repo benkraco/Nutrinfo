@@ -659,6 +659,7 @@ section .buttons:hover,
 
 .parte2-info .img-nutricional {
   margin-left: auto;
+  margin-right: 5%;
 }
 
 .parte3-info .titles {
@@ -1184,13 +1185,6 @@ section .buttons:hover,
     padding: 0 0.5rem;
   }
 
-  .porcentaje img.barra {
-    width: 60%;
-    max-width: 260px;
-    margin-top: 0.5rem;
-    display: block;
-  }
-
   .parte2-info {
     align-items: center;
     gap: 0.5rem;
@@ -1199,9 +1193,10 @@ section .buttons:hover,
   .img-nutricional {
     width: 50%;
     max-width: 220px;
-    margin: 0.5rem auto;
     display: block;
     padding: 2.5%;
+    margin-left: 0%;
+    margin-right: 0%;
   }
 
   .ingredientes {

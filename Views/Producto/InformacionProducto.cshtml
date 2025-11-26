@@ -10,14 +10,13 @@
         <img src="@producto.ImagenProducto" alt="Imagen @producto.Nombre @producto.Cantidad" class="img-producto" />
         <div class="info-producto">
             <p class="titles">@producto.Tipo @producto.Nombre @producto.Cantidad</p>
-            <p><b><u>Descripción:</u></b> Bebida gaseosa de color oscuro, sabor dulce y refrescante con envase de
-                plástico transparente. </p>
+            <p><b><u>Descripción:</u></b> @producto.Descripcion</p>
             <p><b><u>Tipo:</u></b> @producto.Tipo</p>
-            <p><b><u>Marca:</u></b> The Coca-Cola Company</p>
+            <p><b><u>Marca:</u></b> @producto.Marca</p>
             <p><b><u>Cantidad:</u></b> @producto.Cantidad</p>
         </div>
         <div class="porcentaje">
-            <p class="titles">40% - Poco recomendado</p>
+            <p class="titles">@producto.Puntaje%</p>
             <img src="~/img/Varias/Barra porcentaje.png" alt="Barra porcentaje" class="barra" />
         </div>
     </div>
