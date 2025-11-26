@@ -111,4 +111,14 @@ public static class Database
         }
         return perfilPersonalizado;
     }
+
+    public static bool BuscarPerfilExiste(int id)
+    {
+        bool existe;
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            existe = connection.QueryFirstOrDefault<bool>("SELECT 1 FROM Usuarios WHERE ID = @pId AND IDPerfilPersonalizado IS NULL", new { pId = id });
+        }
+        return existe;
+    }
 }

@@ -104,6 +104,10 @@ public class UsuarioController : Controller
         {
             return RedirectToAction("IniciarSesion", "Usuario");
         }
+        if (!Database.BuscarPerfilExiste(usuario.Id))
+        {
+            return RedirectToAction("Index", "Home");
+        }
         return View();
     }
 
@@ -118,6 +122,11 @@ public class UsuarioController : Controller
     public IActionResult CerrarSesion()
     {
         HttpContext.Session.Clear();
+        return View();
+    }
+
+    public IActionResult Configuracion()
+    {
         return View();
     }
 }

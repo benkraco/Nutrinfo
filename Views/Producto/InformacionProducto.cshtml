@@ -27,7 +27,7 @@
             <ol>
                 @foreach (Ingredientes ingrediente in ingredientes)
                 {
-                <li><b><u>@ingrediente.Nombre:</u></b> @ingrediente.Descripcion</li>
+                    <li><b><u>@ingrediente.Nombre:</u></b> @ingrediente.Descripcion</li>
                 }
             </ol>
         </div>
@@ -39,12 +39,12 @@
         <div class="parte3-info" id="producto-info" data-id="@Model.Id">
             <p class="titles">En base a tu perfil</p>
             <div class="info-ia">
-                <p id="texto-ia">
-                <div class="spinner-border" role="status">
-                    <span class="visually-hidden">Loading...</span>
+                <div class="contenedor-ia">
+                    <div class="spinner-border text-light" role="status" id="spinner">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p id="texto-ia">Generando tu respuesta...</p>
                 </div>
-                Generando tu respuesta...
-                </p>
             </div>
         </div>
     }

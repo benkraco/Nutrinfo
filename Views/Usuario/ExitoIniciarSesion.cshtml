@@ -1,13 +1,7 @@
 @{
     ViewData["Title"] = "Exito";
-}
-
-@using Newtonsoft.Json
-@using Nutrinfo.Models
-@{
     Usuarios usuarioLogeado = Objeto.StringToObject<Usuarios>(Context.Session.GetString("Usuario"));
 }
-
 
 <section class="main-registrado">
     <p class="titles">¡Bienvenido/a de nuevo @usuarioLogeado.Nombre!</p>

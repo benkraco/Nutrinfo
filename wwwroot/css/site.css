@@ -665,6 +665,23 @@ section .buttons:hover,
   margin-bottom: 1%;
 }
 
+.contenedor-ia {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1%;
+}
+
+#texto-ia {
+  color: white !important;
+}
+
+/* CONSTRUCCION */
+
+.nutriConstruccion {
+  width: 25% !important;
+}
+
 /* FOOTER */
 
 .firstFooter {
@@ -1207,6 +1224,13 @@ section .buttons:hover,
   .layoutPerfilPerso {
     width: 75%;
   }
+
+  /* CONSTRUCCION */
+
+  .nutriConstruccion {
+    width: 90% !important;
+  }
+
 
   /* FOOTER */
 
