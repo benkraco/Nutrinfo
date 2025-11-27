@@ -16,7 +16,7 @@
             <p><b><u>Cantidad:</u></b> @producto.Cantidad</p>
         </div>
         <div class="porcentaje">
-            <p class="titles">@producto.Puntaje%</p>
+            <p class="titles">@producto.Puntaje% - Aprobado</p>
             <img src="~/img/Varias/Barra porcentaje.png" alt="Barra porcentaje" class="barra" />
         </div>
     </div>
@@ -52,7 +52,8 @@ else
             <div class="info-ia-text">
                 <img src="~/img/Varias/NutriCandado.png" alt="Imagen Nutri Candado">
                 <div class = "overlay-text">
-                    <p class = "titles">Para tener una experiencia personalizada</p>
+                    <p class = "titles">Sección bloqueada</p>
+                    <p>Para poder tener una experiencia personalizada a tus restricciones alimentarias:</p>
                     <div class = "botones-info">
                         <a href='@Url.Action("Registrarse", "Usuario")' class="buttons">Registrate</a>
                         <a href='@Url.Action("IniciarSesion", "Usuario")' class="buttons">Iniciar sesión</a>
