@@ -47,11 +47,17 @@
             </div>
         </div>
     }
-    else
+else
     {
-        <div class="parte3-info">
-            <p class="titles">En base a tu perfil</p>
-        </div>
+            <div class="info-ia-text">
+                <img src="~/img/Varias/NutriCandado.png" alt="Imagen Nutri Candado">
+                <div class = "overlay-text">
+                    <p class = "titles">Para tener una experiencia personalizada</p>
+                    <div class = "botones-info">
+                        <a href='@Url.Action("Registrarse", "Usuario")' class="buttons">Registrate</a>
+                        <a href='@Url.Action("IniciarSesion", "Usuario")' class="buttons">Iniciar sesión</a>
+                    </div>
+                </div>
+            </div>
     }
-
 </section>
